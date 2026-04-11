@@ -1,0 +1,6 @@
+# Rewrite /365-dias-branding-lp/* to serve static files from root
+/365-dias-branding-lp    /index.html    200
+/365-dias-branding-lp/*  /:splat        200
+
+# Root redirects to main domain
+/    https://brandinglab.com.br    301
