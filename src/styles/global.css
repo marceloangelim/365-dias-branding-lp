@@ -1,0 +1,203 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Reset / Base ─────────────────────────────────────────── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Inter', sans-serif;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  ::selection {
+    background: #00ccdf;
+    color: #0f1722;
+  }
+}
+
+/* ── Barra de progresso de leitura ───────────────────────── */
+#reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  z-index: 9999;
+  background: linear-gradient(90deg, #00ccdf 0%, #d387fe 100%);
+  transition: width 0.1s linear;
+}
+
+/* ── Separador ink-spread ─────────────────────────────────── */
+.ink-divider {
+  display: block;
+  height: 2px;
+  width: 0%;
+  background: linear-gradient(90deg, #00ccdf 0%, #d387fe 100%);
+  border-radius: 2px;
+  opacity: 0;
+}
+.ink-divider.visible {
+  animation: inkSpread 0.9s ease-out forwards;
+}
+@keyframes inkSpread {
+  0%   { width: 0%;   opacity: 0; }
+  100% { width: 100%; opacity: 1; }
+}
+
+/* ── Float (hero book) ────────────────────────────────────── */
+.float-anim {
+  animation: float 6s ease-in-out infinite;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-14px); }
+}
+
+/* ── Shimmer CTA ──────────────────────────────────────────── */
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s, transform 0.2s;
+}
+.btn-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -150%;
+  width: 80%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.6s ease;
+}
+.btn-shimmer:hover::after {
+  left: 180%;
+}
+.btn-shimmer:hover {
+  transform: translateY(-2px);
+}
+.btn-shimmer:active {
+  transform: translateY(0px);
+}
+
+/* ── Reveal via GSAP (estado inicial) ───────────────────── */
+.gsap-reveal {
+  opacity: 0;
+  transform: translateY(32px);
+}
+.gsap-reveal-left {
+  opacity: 0;
+  transform: translateX(-32px);
+}
+.gsap-reveal-right {
+  opacity: 0;
+  transform: translateX(32px);
+}
+
+/* ── Page flip hover (galeria) ───────────────────────────── */
+.page-flip-wrap {
+  perspective: 800px;
+}
+.page-flip-wrap img {
+  transition: transform 0.5s ease, box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+}
+.page-flip-wrap:hover img {
+  transform: rotateY(-8deg) scale(1.04);
+  box-shadow: 12px 16px 40px rgba(0, 204, 223, 0.25);
+}
+
+/* ── Lightbox ─────────────────────────────────────────────── */
+#lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 34, 0.92);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  backdrop-filter: blur(6px);
+}
+#lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 0 60px rgba(0, 204, 223, 0.3);
+}
+#lightbox-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  line-height: 1;
+  background: rgba(255,255,255,0.1);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+#lightbox-close:hover {
+  background: rgba(0, 204, 223, 0.4);
+}
+
+/* ── Book open card ───────────────────────────────────────── */
+.book-card {
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+}
+.book-card.open {
+  animation: bookOpen 0.7s ease-out forwards;
+}
+@keyframes bookOpen {
+  0%   { transform: rotateY(-25deg) translateY(20px); opacity: 0; }
+  100% { transform: rotateY(0deg)   translateY(0px);  opacity: 1; }
+}
+
+/* ── FAQ accordion ────────────────────────────────────────── */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+.faq-icon {
+  transition: transform 0.3s ease;
+}
+.faq-item.open .faq-icon {
+  transform: rotate(45deg);
+}
+
+/* ── Gradient text ────────────────────────────────────────── */
+.text-gradient {
+  background: linear-gradient(135deg, #00ccdf 0%, #d387fe 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Badge pill ───────────────────────────────────────────── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ── Scrollbar brand ──────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f8f6f3; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #00ccdf, #d387fe);
+  border-radius: 3px;
+}

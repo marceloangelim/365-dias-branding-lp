@@ -1,0 +1,339 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  ogImage?: string;
+}
+const {
+  title = "365 Dias de Branding — Guia Prático com 365 Exercícios | Branding Lab",
+  description = "365 Dias de Branding é o guia prático com 365 exercícios de branding para todos os dias do ano. Aprenda a posicionar sua marca com Ellen, fundadora da Branding Lab. A partir de 3x R$87,31.",
+  canonical = "https://go.brandinglab.com.br",
+  ogImage = "https://go.brandinglab.com.br/imgs/hero-365-branding.avif",
+} = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0f1722" />
+
+  <!-- SEO Primário -->
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href={canonical} />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="product" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="Branding Lab" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/imgs/logo-branding-lab.svg" type="image/svg+xml" />
+
+  <!-- Google Fonts (preconnect primeiro) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Schema.org: Book + Offers -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Book",
+    "name": "365 Dias de Branding",
+    "description": "Guia Prático com 365 exercícios práticos de branding e ideias para todos os dias do ano, criado para empreendedoras que querem construir uma marca apaixonante.",
+    "url": "https://go.brandinglab.com.br",
+    "image": "https://go.brandinglab.com.br/imgs/hero-365-branding.avif",
+    "author": {
+      "@type": "Person",
+      "name": "Ellen",
+      "jobTitle": "Fundadora da Branding Lab",
+      "url": "https://brandinglab.com.br"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Branding Lab",
+      "url": "https://brandinglab.com.br",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://go.brandinglab.com.br/imgs/logo-branding-lab.svg"
+      }
+    },
+    "numberOfPages": 200,
+    "inLanguage": "pt-BR",
+    "bookFormat": ["EBook", "Paperback"],
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Versão Digital + Bônus",
+        "price": "247.00",
+        "priceCurrency": "BRL",
+        "availability": "https://schema.org/InStock",
+        "url": "https://go.brandinglab.com.br#pricing"
+      },
+      {
+        "@type": "Offer",
+        "name": "Versão Física + Digital + Bônus",
+        "price": "367.00",
+        "priceCurrency": "BRL",
+        "availability": "https://schema.org/InStock",
+        "url": "https://go.brandinglab.com.br#pricing"
+      }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "reviewCount": "50000"
+    }
+  }
+  </script>
+
+  <!-- Schema.org: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Em quanto tempo recebo a versão física do 365 Dias de Branding?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Seu pedido será embalado em até 3 dias úteis após confirmação do pagamento. Você receberá um código de rastreio por e-mail para acompanhar pelos Correios."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Ao comprar a versão física, também ganho a versão digital?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nossa opção mais indicada inclui Digital + Física + Bônus. Você também pode optar por comprar apenas o digital. Fique atenta ao combo escolhido na hora da compra."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O 365 Dias de Branding serve para marca pessoal?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. Todas as lições são voltadas para construção de marca e negócio. Se você quer aplicar estratégias de branding, criar produtos e aprender sobre planejamento, o 365DB vai te ajudar."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O 365 Dias de Branding serve para qualquer nicho?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. O guia é extremamente democrático e oferece uma visão geral e atual de marketing e branding aplicável a qualquer segmento de negócio."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Serve para quem não tem equipe ainda?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. Independente do tamanho da sua equipe ou se você é 'euquipe', este livro irá te ajudar de diversas maneiras."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O livro serve para quem ainda está planejando o negócio?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Com certeza. Com o Guia Prático você começará desde o dia zero com uma orientação e um caminho a seguir. É o melhor manual para quem está planejando um negócio."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O 365 Dias de Branding me ajudará a ter ideias de posts para o Instagram?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Este não é um livro apenas sobre Instagram. É um livro que te dará uma visão geral com exercícios práticos de Branding que podem ser aplicados no Instagram ou fora dele."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Ele possui exercícios que já existem nos outros livros da Branding Lab?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "É possível que você encontre alguns exercícios já vistos em outros produtos, porém tomamos o cuidado de incluir apenas exercícios cruciais e de produtos que saíram do ar."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- GSAP + ScrollTrigger CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+</head>
+<body class="bg-white text-brand-dark font-body antialiased">
+  <!-- Barra de leitura -->
+  <div id="reading-progress"></div>
+
+  <slot />
+
+  <!-- Lightbox global -->
+  <div id="lightbox" class="hidden" role="dialog" aria-modal="true" aria-label="Visualizar imagem">
+    <button id="lightbox-close" aria-label="Fechar">✕</button>
+    <img id="lb-img" src="" alt="Imagem ampliada" />
+  </div>
+
+  <!-- Scripts globais -->
+  <script>
+    // ── Barra de progresso de leitura ──────────────────────
+    const bar = document.getElementById('reading-progress');
+    window.addEventListener('scroll', () => {
+      const total = document.body.scrollHeight - window.innerHeight;
+      const pct = (window.scrollY / total) * 100;
+      if (bar) bar.style.width = pct + '%';
+    });
+
+    // ── Lightbox ───────────────────────────────────────────
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lb-img');
+    const lbClose = document.getElementById('lightbox-close');
+
+    document.querySelectorAll('.gallery-img').forEach(img => {
+      img.addEventListener('click', () => {
+        lbImg.src = img.src;
+        lbImg.alt = img.alt;
+        lb.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+    function closeLb() {
+      lb.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+    lbClose?.addEventListener('click', closeLb);
+    lb?.addEventListener('click', (e) => { if (e.target === lb) closeLb(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLb(); });
+
+    // ── FAQ accordion ──────────────────────────────────────
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const answer = btn.nextElementSibling;
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => {
+          i.classList.remove('open');
+          const a = i.querySelector('.faq-answer');
+          if (a) a.style.maxHeight = '';
+        });
+        if (!isOpen) {
+          item.classList.add('open');
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+        }
+      });
+    });
+
+    // ── Ink dividers ───────────────────────────────────────
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    document.querySelectorAll('.ink-divider').forEach(el => observer.observe(el));
+
+    // ── GSAP animations (carrega após GSAP estar disponível) ──
+    window.addEventListener('load', () => {
+      if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Reveal genérico
+      gsap.utils.toArray('.gsap-reveal').forEach(el => {
+        gsap.to(el, {
+          opacity: 1, y: 0, duration: 0.8, ease: 'power2.out',
+          scrollTrigger: { trigger: el, start: 'top 88%' }
+        });
+      });
+      gsap.utils.toArray('.gsap-reveal-left').forEach(el => {
+        gsap.to(el, {
+          opacity: 1, x: 0, duration: 0.8, ease: 'power2.out',
+          scrollTrigger: { trigger: el, start: 'top 88%' }
+        });
+      });
+      gsap.utils.toArray('.gsap-reveal-right').forEach(el => {
+        gsap.to(el, {
+          opacity: 1, x: 0, duration: 0.8, ease: 'power2.out',
+          scrollTrigger: { trigger: el, start: 'top 88%' }
+        });
+      });
+
+      // Stagger em grupos
+      document.querySelectorAll('.gsap-stagger-group').forEach(group => {
+        gsap.to(group.querySelectorAll('.gsap-stagger-item'), {
+          opacity: 1, y: 0, duration: 0.6, stagger: 0.12, ease: 'power2.out',
+          scrollTrigger: { trigger: group, start: 'top 85%' }
+        });
+      });
+
+      // Book open cards
+      document.querySelectorAll('.book-card').forEach((card, i) => {
+        gsap.fromTo(card,
+          { rotateY: -25, y: 20, opacity: 0 },
+          {
+            rotateY: 0, y: 0, opacity: 1,
+            duration: 0.8, delay: i * 0.15, ease: 'power2.out',
+            scrollTrigger: { trigger: card, start: 'top 85%' }
+          }
+        );
+      });
+
+      // Parallax hero book
+      const heroBook = document.getElementById('hero-book');
+      if (heroBook) {
+        gsap.to(heroBook, {
+          y: 60,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: '#hero',
+            start: 'top top',
+            end: 'bottom top',
+            scrub: true
+          }
+        });
+      }
+
+      // Contador animado
+      document.querySelectorAll('.count-up').forEach(el => {
+        const target = parseInt(el.dataset.target, 10);
+        ScrollTrigger.create({
+          trigger: el,
+          start: 'top 85%',
+          once: true,
+          onEnter: () => {
+            gsap.to({ val: 0 }, {
+              val: target, duration: 1.8, ease: 'power2.out',
+              onUpdate: function() {
+                el.textContent = Math.round(this.targets()[0].val).toLocaleString('pt-BR');
+              }
+            });
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

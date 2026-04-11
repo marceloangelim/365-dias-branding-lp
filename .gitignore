@@ -1,0 +1,11 @@
+dist/
+node_modules/
+.env
+.env.*
+!.env.example
+.DS_Store
+*.log
+.astro/
+.claude/
+imgs lp/
+"LP 365 Dias de branding.docx"

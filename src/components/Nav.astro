@@ -1,0 +1,34 @@
+---
+---
+<header id="nav" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm transition-shadow duration-300">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="/" aria-label="Branding Lab — Página inicial">
+      <img
+        src="/imgs/logo-branding-lab.svg"
+        alt="Branding Lab"
+        width="140"
+        height="40"
+        class="h-9 w-auto"
+      />
+    </a>
+
+    <!-- CTA Nav -->
+    <a
+      href="#pricing"
+      class="btn-shimmer bg-brand-dark text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-brand-cyan transition-colors duration-300"
+    >
+      Quero o 365DB
+    </a>
+  </div>
+</header>
+
+<!-- Espaçador para compensar o fixed -->
+<div class="h-16"></div>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('nav');
+    if (nav) nav.classList.toggle('shadow-md', window.scrollY > 20);
+  });
+</script>

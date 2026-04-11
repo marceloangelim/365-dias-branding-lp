@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import Logos from '../components/Logos.astro';
+import Problem from '../components/Problem.astro';
+import Solution from '../components/Solution.astro';
+import BookSections from '../components/BookSections.astro';
+import Gallery from '../components/Gallery.astro';
+import Author from '../components/Author.astro';
+import TestimonialsPhotos from '../components/TestimonialsPhotos.astro';
+import TestimonialsIG from '../components/TestimonialsIG.astro';
+import Pricing from '../components/Pricing.astro';
+import Bonuses from '../components/Bonuses.astro';
+import FAQ from '../components/FAQ.astro';
+import FinalCTA from '../components/FinalCTA.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+---
+<Layout
+  title="365 Dias de Branding — Guia Prático com 365 Exercícios | Branding Lab"
+  description="365 Dias de Branding é o guia prático com 365 exercícios de branding para todos os dias do ano. Aprenda a posicionar sua marca com Ellen, fundadora da Branding Lab. A partir de 3x R$87,31."
+>
+  <Nav />
+  <main>
+    <Hero />
+    <Logos />
+    <Problem />
+    <Solution />
+    <BookSections />
+    <Gallery />
+    <Author />
+    <TestimonialsPhotos />
+    <TestimonialsIG />
+    <Pricing />
+    <Bonuses />
+    <FAQ />
+    <FinalCTA />
+  </main>
+  <Footer />
+</Layout>

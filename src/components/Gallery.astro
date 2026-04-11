@@ -1,0 +1,39 @@
+---
+const pages = [
+  "365-branding-fisico-e-digital.avif",
+  "365-branding-digital.avif",
+  "365sb-fund-01.avif","365sb-fund-02.avif","365sb-fund-03.avif","365sb-fund-04.avif","365sb-fund-05.avif",
+  "365sb-plan-01.avif","365sb-plan-02.avif","365sb-plan-03.avif","365sb-plan-04.avif","365sb-plan-05.avif",
+  "365sb-exec-01.avif","365sb-exec-02.avif","365sb-exec-03.avif","365sb-exec-04.avif","365sb-exec-05.avif",
+];
+---
+<section class="bg-white py-20" aria-label="Veja as páginas do livro por dentro">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+
+    <div class="text-center mb-12">
+      <span class="badge bg-brand-cyan/15 text-brand-cyan mb-3 w-fit mx-auto">Conteúdo real</span>
+      <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-brand-ink gsap-reveal">
+        Veja por dentro
+      </h2>
+      <p class="text-gray-500 mt-3 max-w-md mx-auto text-sm">
+        Clique em qualquer página para ampliar e ver o conteúdo em detalhe.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+      {pages.map((page, i) => (
+        <div class="page-flip-wrap">
+          <img
+            src={`/imgs/paginas-internas/${page}`}
+            alt={`Página interna do livro 365 Dias de Branding — ${i + 1}`}
+            width="200"
+            height="270"
+            loading="lazy"
+            class="gallery-img w-full h-auto rounded-xl border border-gray-200 cursor-zoom-in"
+          />
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
