@@ -1,5 +1,6 @@
 ---
-const whatsappLink = "https://wa.me/55XXXXXXXXXX"; // <- substitua pelo seu número
+const whatsappLink = "https://brandinglab.com.br/whatsapp";
+const emailContato = "contato@brandinglab.com.br";
 ---
 <footer class="bg-brand-navy text-gray-400 py-12" role="contentinfo">
   <div class="max-w-5xl mx-auto px-4 sm:px-6">
@@ -20,6 +21,9 @@ const whatsappLink = "https://wa.me/55XXXXXXXXXX"; // <- substitua pelo seu núm
       <nav class="flex flex-wrap items-center gap-6 text-sm" aria-label="Links do rodapé">
         <a href={whatsappLink} target="_blank" rel="noopener noreferrer" class="hover:text-brand-cyan transition-colors">
           Suporte WhatsApp
+        </a>
+        <a href={`mailto:${emailContato}`} class="hover:text-brand-cyan transition-colors">
+          {emailContato}
         </a>
         <a href="#" class="hover:text-brand-cyan transition-colors">Política de Privacidade</a>
         <a href="https://brandinglab.com.br" target="_blank" rel="noopener noreferrer" class="hover:text-brand-cyan transition-colors">

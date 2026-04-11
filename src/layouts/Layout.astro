@@ -191,7 +191,7 @@ const {
   <slot />
 
   <!-- Lightbox global -->
-  <div id="lightbox" class="hidden" role="dialog" aria-modal="true" aria-label="Visualizar imagem">
+  <div id="lightbox" role="dialog" aria-modal="true" aria-label="Visualizar imagem">
     <button id="lightbox-close" aria-label="Fechar">✕</button>
     <img id="lb-img" src="" alt="Imagem ampliada" />
   </div>
@@ -215,12 +215,12 @@ const {
       img.addEventListener('click', () => {
         lbImg.src = img.src;
         lbImg.alt = img.alt;
-        lb.classList.remove('hidden');
+        lb.classList.add('show');
         document.body.style.overflow = 'hidden';
       });
     });
     function closeLb() {
-      lb.classList.add('hidden');
+      lb.classList.remove('show');
       document.body.style.overflow = '';
     }
     lbClose?.addEventListener('click', closeLb);

@@ -109,15 +109,18 @@
 
 /* ── Lightbox ─────────────────────────────────────────────── */
 #lightbox {
+  display: none; /* oculto por padrão — aberto via .show */
   position: fixed;
   inset: 0;
   background: rgba(15, 23, 34, 0.92);
   z-index: 1000;
-  display: flex;
   align-items: center;
   justify-content: center;
   padding: 1rem;
   backdrop-filter: blur(6px);
+}
+#lightbox.show {
+  display: flex;
 }
 #lightbox img {
   max-width: 90vw;
