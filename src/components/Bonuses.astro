@@ -1,66 +1,66 @@
 ---
 ---
-<section class="bg-surface-dark py-24 overflow-hidden relative" aria-label="Bônus inclusos">
-  <!-- Decorative glow -->
-  <div class="absolute top-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
-  <div class="absolute bottom-0 left-0 w-64 h-64 bg-accent/8 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2 pointer-events-none"></div>
+<section id="bonus" class="bg-accent-light py-24 overflow-hidden relative" aria-label="Bônus inclusos">
+  <!-- Subtle decorative rings -->
+  <div class="absolute -top-16 -right-16 w-72 h-72 border border-accent/15 rounded-full pointer-events-none"></div>
+  <div class="absolute -top-8 -right-8 w-40 h-40 border border-accent/10 rounded-full pointer-events-none"></div>
 
   <div class="relative max-w-5xl mx-auto px-4 sm:px-6">
 
     <div class="text-center mb-14">
-      <div class="pill-dark mb-4 mx-auto w-fit">Só para quem comprar agora</div>
-      <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-white gsap-reveal">
+      <div class="pill mb-4 mx-auto w-fit">Só para quem comprar agora</div>
+      <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-ink gsap-reveal">
         Olha só o que vem incluso
       </h2>
-      <p class="text-gray-400 mt-3 text-sm">R$394 em bônus — inclusos gratuitamente</p>
+      <p class="text-ink-faint mt-3 text-sm">R$394 em bônus — inclusos gratuitamente</p>
     </div>
 
-    <!-- Bonus cards on dark -->
+    <!-- Bonus cards -->
     <div class="grid md:grid-cols-2 gap-5 mb-12">
 
       <!-- Bônus 1 -->
-      <div class="gsap-reveal-left bg-surface-darkcard rounded-2xl overflow-hidden border border-white/8 card-lift">
+      <div class="gsap-reveal-left bg-white rounded-2xl overflow-hidden border border-orange-100 card-lift shadow-sm">
         <img
           src="/imgs/paginas-internas/mockup-365-branding-bonus-365-making-planilha.avif"
           alt="Planilha 365 Making"
           width="500" height="260"
           loading="lazy"
-          class="w-full h-44 object-contain bg-white/5"
+          class="w-full h-44 object-contain bg-surface-warm"
         />
         <div class="p-6">
           <div class="flex items-center gap-3 mb-3">
-            <span class="pill-dark">Bônus 01</span>
-            <span class="text-gray-500 text-sm line-through">R$197</span>
+            <span class="pill">Bônus 01</span>
+            <span class="text-gray-400 text-sm line-through">R$197</span>
             <span class="text-accent text-sm font-semibold">Grátis</span>
           </div>
-          <h3 class="font-heading font-bold text-xl text-white mb-2">Planilha 365 Making</h3>
-          <p class="text-gray-400 text-sm leading-relaxed">
+          <h3 class="font-heading font-bold text-xl text-ink mb-2">Planilha 365 Making</h3>
+          <p class="text-ink-faint text-sm leading-relaxed">
             Planilha no Google Drive com os 365 exercícios em calendário organizado. Marque e visualize quais ações já colocou em prática ao longo do ano.
           </p>
         </div>
       </div>
 
       <!-- Bônus 2 -->
-      <div class="gsap-reveal-right bg-surface-darkcard rounded-2xl overflow-hidden border border-white/8 card-lift">
-        <div class="w-full h-44 bg-gradient-to-br from-accent/20 to-black flex items-center justify-center">
+      <div class="gsap-reveal-right bg-white rounded-2xl overflow-hidden border border-orange-100 card-lift shadow-sm">
+        <div class="w-full h-44 bg-gradient-to-br from-accent/10 to-accent-muted/30 flex items-center justify-center">
           <div class="text-center">
-            <div class="w-16 h-16 rounded-full border-2 border-accent/50 bg-accent/15 flex items-center justify-center mx-auto mb-3">
+            <div class="w-16 h-16 rounded-full border-2 border-accent/40 bg-white flex items-center justify-center mx-auto mb-3">
               <svg class="w-7 h-7 text-accent ml-1" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M8 5v14l11-7z"/>
               </svg>
             </div>
-            <p class="font-heading font-bold text-white text-lg">MasterClass</p>
+            <p class="font-heading font-bold text-ink text-lg">MasterClass</p>
             <p class="text-accent text-sm">3 horas de conteúdo</p>
           </div>
         </div>
         <div class="p-6">
           <div class="flex items-center gap-3 mb-3">
-            <span class="pill-dark">Bônus 02</span>
-            <span class="text-gray-500 text-sm line-through">R$197</span>
+            <span class="pill">Bônus 02</span>
+            <span class="text-gray-400 text-sm line-through">R$197</span>
             <span class="text-accent text-sm font-semibold">Grátis</span>
           </div>
-          <h3 class="font-heading font-bold text-xl text-white mb-2">MasterClass de Planejamento Estratégico</h3>
-          <p class="text-gray-400 text-sm leading-relaxed">
+          <h3 class="font-heading font-bold text-xl text-ink mb-2">MasterClass de Planejamento Estratégico</h3>
+          <p class="text-ink-faint text-sm leading-relaxed">
             3 horas gravadas na área de membros. O que considerar em branding na hora de planejar? Quais os primeiros passos?
           </p>
         </div>
@@ -69,20 +69,20 @@
     </div>
 
     <!-- Value stack summary -->
-    <div class="rounded-2xl border border-white/10 bg-white/5 p-6 text-center gsap-reveal">
+    <div class="rounded-2xl border border-orange-200 bg-white/80 p-6 text-center gsap-reveal">
       <div class="flex items-center justify-center gap-4 flex-wrap">
         <div class="text-center">
-          <p class="text-gray-400 text-xs uppercase tracking-widest mb-1">Guia 365DB</p>
-          <p class="font-heading font-bold text-white text-xl">R$247 – R$367</p>
+          <p class="text-ink-faint text-xs uppercase tracking-widest mb-1">Guia 365DB</p>
+          <p class="font-heading font-bold text-ink text-xl">R$247 – R$367</p>
         </div>
         <span class="text-accent text-2xl font-bold">+</span>
         <div class="text-center">
-          <p class="text-gray-400 text-xs uppercase tracking-widest mb-1">Bônus</p>
-          <p class="font-heading font-bold text-white text-xl line-through text-gray-500">R$394</p>
+          <p class="text-ink-faint text-xs uppercase tracking-widest mb-1">Bônus</p>
+          <p class="font-heading font-bold text-gray-400 text-xl line-through">R$394</p>
         </div>
         <span class="text-accent text-2xl font-bold">=</span>
         <div class="text-center">
-          <p class="text-gray-400 text-xs uppercase tracking-widest mb-1">Valor total</p>
+          <p class="text-ink-faint text-xs uppercase tracking-widest mb-1">Valor total</p>
           <p class="font-heading font-bold text-accent text-2xl">Você paga muito menos</p>
         </div>
       </div>

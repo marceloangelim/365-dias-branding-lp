@@ -1,127 +1,83 @@
 ---
 ---
-<section id="hero" class="bg-gradient-hero min-h-screen overflow-hidden" aria-label="Apresentação do produto">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 pt-10 pb-0">
+<section id="hero" class="bg-gradient-hero overflow-hidden" aria-label="Apresentação do produto">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 pt-6 sm:pt-10 pb-10">
 
-    <!-- Main grid: copy left, product right -->
-    <div class="grid md:grid-cols-[1.1fr_0.9fr] gap-10 items-center mb-10">
+    <div class="flex flex-col items-center text-center">
 
-      <!-- LEFT: Copy -->
-      <div class="gsap-reveal">
-        <div class="pill mb-6">
-          <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><circle cx="5" cy="5" r="5"/></svg>
-          Guia Prático · 365 Exercícios de Branding
-        </div>
+      <!-- Badge -->
+      <div class="pill mb-3 sm:mb-5 gsap-reveal">
+        <svg width="8" height="8" viewBox="0 0 10 10" fill="currentColor"><circle cx="5" cy="5" r="5"/></svg>
+        <span class="sm:hidden">365 Exercícios de Branding</span>
+        <span class="hidden sm:inline">Guia Prático · 365 Exercícios de Branding</span>
+      </div>
 
-        <h1 class="font-heading font-extrabold text-4xl sm:text-5xl xl:text-[3.6rem] text-ink leading-[1.1] mb-6 tracking-tight">
-          Construa uma<br />
-          <span class="text-gradient">marca apaixonante</span><br />
-          — um exercício<br />
-          por dia.
-        </h1>
+      <!-- H1 -->
+      <h1 class="font-heading font-extrabold text-3xl sm:text-5xl xl:text-[3.6rem] text-ink leading-[1.08] mb-2 sm:mb-4 tracking-tight max-w-3xl gsap-reveal">
+        Construa uma<br />
+        <span class="text-gradient">marca apaixonante</span><br />
+        — um exercício por dia.
+      </h1>
 
-        <p class="text-ink-faint text-lg leading-relaxed mb-8 max-w-md">
-          O guia prático com <strong class="text-ink font-semibold">365 exercícios de branding</strong> criado por Ellen,
-          fundadora da Branding Lab — para empreendedoras que querem se posicionar e crescer de verdade.
-        </p>
+      <!-- Subtext -->
+      <p class="text-ink-faint text-base sm:text-lg leading-relaxed mb-4 sm:mb-6 max-w-xl gsap-reveal">
+        O guia prático com <strong class="text-ink font-semibold">365 exercícios de branding</strong> criado
+        por Ellen, fundadora da Branding Lab — para empreendedoras que querem se posicionar e crescer de verdade.
+      </p>
 
-        <!-- Avatar social proof -->
-        <div class="flex items-center gap-3 mb-8">
-          <div class="flex -space-x-2">
-            {[1,2,3,4].map(i => (
-              <div class="w-9 h-9 rounded-full border-2 border-white overflow-hidden bg-accent-muted">
-                <img src={`/imgs/clientes/Depoimento_365_Foto100${i}.webp`} alt="" width="36" height="36" loading="lazy" class="w-full h-full object-cover" />
-              </div>
-            ))}
-          </div>
-          <div>
-            <div class="stars text-sm">★★★★★</div>
-            <p class="text-xs text-ink-faint mt-0.5">+50.000 empreendedoras transformadas</p>
-          </div>
-        </div>
-
-        <!-- CTAs -->
-        <div class="flex flex-wrap items-center gap-4">
-          <a href="#pricing" class="btn-primary">
-            Quero o 365DB agora
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-          <div>
-            <p class="text-xs text-ink-faint leading-tight">Digital a partir de</p>
-            <p class="font-heading font-bold text-ink text-sm">3x R$87,31 · Acesso imediato</p>
-          </div>
+      <!-- CTAs -->
+      <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-6 sm:mb-10 gsap-reveal">
+        <a href="#pricing" class="btn-primary">
+          Quero o 365DB agora
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <div class="text-left">
+          <p class="text-xs text-ink-faint leading-tight">Digital a partir de</p>
+          <p class="font-heading font-bold text-ink text-sm">3x R$87,31 · Acesso imediato</p>
         </div>
       </div>
 
-      <!-- RIGHT: Product image -->
-      <div class="hidden md:flex items-end justify-center relative">
-        <!-- Glow blob -->
+      <!-- ── Book image — hero centerpiece ── -->
+      <div class="relative w-full flex justify-center mb-6 sm:mb-10 gsap-reveal">
         <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div class="w-80 h-80 bg-accent/15 rounded-full blur-3xl"></div>
+          <div class="w-96 h-48 bg-accent/12 rounded-full blur-3xl"></div>
         </div>
-        <div id="hero-book" class="float-anim relative z-10 book-open-anim" style="animation-delay:0.2s">
+        <div id="hero-book" class="float-anim book-open-anim relative z-10" style="animation-delay:0.2s">
           <img
             src="/imgs/spiral_mockup_365_DB-1.gif"
             alt="Livro 365 Dias de Branding — Guia Prático com 365 exercícios de branding"
-            width="560" height="640"
+            width="600" height="680"
             loading="eager"
             fetchpriority="high"
-            class="w-full h-auto object-contain max-h-[80vh]"
+            class="w-full max-w-xs sm:max-w-md lg:max-w-lg h-auto object-contain drop-shadow-xl"
           />
         </div>
       </div>
 
-      <!-- Mobile image -->
-      <div class="flex md:hidden justify-center -mx-4">
-        <img
-          src="/imgs/spiral_mockup_365_DB-1.gif"
-          alt="Livro 365 Dias de Branding"
-          width="260" height="300"
-          loading="eager"
-          class="w-56 h-auto"
-        />
-      </div>
-    </div>
+      <!-- ── Stat cards ── -->
+      <div class="grid grid-cols-3 gap-2 sm:gap-3 w-full max-w-lg gsap-reveal">
 
-    <!-- BENTO stat cards (ref 1 inspiration) -->
-    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pb-10 gsap-reveal" style="--delay:0.3s">
-
-      <div class="stat-dark col-span-1">
-        <div class="flex items-center gap-3 mb-2">
-          <div class="flex -space-x-2">
-            {[1,2,3].map(i => (
-              <div class="w-7 h-7 rounded-full border-2 border-gray-700 overflow-hidden">
-                <img src={`/imgs/clientes/Depoimento_365_Foto100${i}.webp`} alt="" width="28" height="28" loading="lazy" class="w-full h-full object-cover" />
-              </div>
-            ))}
-          </div>
+        <div class="stat-dark !p-3 sm:!p-6">
+          <p class="font-heading font-extrabold text-base sm:text-2xl text-white leading-none">
+            <span class="count-up" data-target="50000">50k</span>+
+          </p>
+          <p class="text-[9px] sm:text-xs text-gray-400 mt-1 uppercase tracking-widest">Clientes</p>
         </div>
-        <p class="font-heading font-extrabold text-3xl text-white leading-none">
-          <span class="count-up" data-target="50000">50k</span>+
-        </p>
-        <p class="text-xs text-gray-400 mt-1 uppercase tracking-widest">Clientes satisfeitas</p>
-      </div>
 
-      <div class="stat-orange col-span-1">
-        <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center mb-2">
-          <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069z"/></svg>
+        <div class="stat-dark !p-3 sm:!p-6">
+          <p class="font-heading font-extrabold text-base sm:text-2xl text-white leading-none">
+            <span class="count-up" data-target="340000">340k</span>+
+          </p>
+          <p class="text-[9px] sm:text-xs text-gray-400 mt-1 uppercase tracking-widest">Seguidores</p>
         </div>
-        <p class="font-heading font-extrabold text-3xl text-white leading-none">
-          <span class="count-up" data-target="340000">340k</span>+
-        </p>
-        <p class="text-xs text-white/70 mt-1 uppercase tracking-widest">Seguidores</p>
-      </div>
 
-      <div class="stat-cream col-span-2 sm:col-span-1">
-        <div class="flex items-center justify-between mb-2">
-          <div class="stars text-sm">★★★★★</div>
-          <svg class="w-5 h-5 text-accent opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+        <div class="stat-cream !p-3 sm:!p-6">
+          <p class="font-heading font-extrabold text-base sm:text-xl text-ink leading-none">7 Díg.</p>
+          <div class="stars text-[10px] sm:text-xs mt-1">★★★★★</div>
         </div>
-        <p class="font-heading font-extrabold text-2xl text-ink leading-none">7 Dígitos</p>
-        <p class="text-xs text-ink-faint mt-1 uppercase tracking-widest">Faturamento</p>
+
       </div>
 
     </div>
-
   </div>
 </section>

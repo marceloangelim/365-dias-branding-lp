@@ -45,9 +45,14 @@ const {
   <!-- Favicon -->
   <link rel="icon" href="/imgs/logo-branding-lab.svg" type="image/svg+xml" />
 
-  <!-- Google Fonts v3: Plus Jakarta Sans (headings) + Inter (body) -->
+  <!-- Preconnects (DNS / TLS antecipado para performance) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://www.googletagmanager.com" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+
+  <!-- Google Fonts: Plus Jakarta Sans + Inter -->
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
     rel="stylesheet"
@@ -130,50 +135,10 @@ const {
       },
       {
         "@type": "Question",
-        "name": "O 365 Dias de Branding serve para marca pessoal?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sim. Todas as lições são voltadas para construção de marca e negócio. Se você quer aplicar estratégias de branding, criar produtos e aprender sobre planejamento, o 365DB vai te ajudar."
-        }
-      },
-      {
-        "@type": "Question",
         "name": "O 365 Dias de Branding serve para qualquer nicho?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Sim. O guia é extremamente democrático e oferece uma visão geral e atual de marketing e branding aplicável a qualquer segmento de negócio."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Serve para quem não tem equipe ainda?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sim. Independente do tamanho da sua equipe ou se você é 'euquipe', este livro irá te ajudar de diversas maneiras."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "O livro serve para quem ainda está planejando o negócio?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Com certeza. Com o Guia Prático você começará desde o dia zero com uma orientação e um caminho a seguir. É o melhor manual para quem está planejando um negócio."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "O 365 Dias de Branding me ajudará a ter ideias de posts para o Instagram?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Este não é um livro apenas sobre Instagram. É um livro que te dará uma visão geral com exercícios práticos de Branding que podem ser aplicados no Instagram ou fora dele."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Ele possui exercícios que já existem nos outros livros da Branding Lab?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "É possível que você encontre alguns exercícios já vistos em outros produtos, porém tomamos o cuidado de incluir apenas exercícios cruciais e de produtos que saíram do ar."
         }
       }
     ]
@@ -183,17 +148,48 @@ const {
   <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-  <!-- GSAP + ScrollTrigger CDN -->
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-T5ZFGT2');
+    /* GA4 (G-WFF0NFREV2) e Google Ads (AW-11004906052) configurar como tags no GTM */
+  </script>
+
+  <!-- GSAP + ScrollTrigger -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
 </head>
 <body class="bg-white text-ink font-body antialiased overflow-x-hidden">
+
+  <!-- GTM noscript (acessibilidade para navegadores sem JS) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T5ZFGT2"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+
   <!-- Barra de leitura -->
   <div id="reading-progress"></div>
 
   <slot />
+
+  <!-- WhatsApp floating button -->
+  <a
+    id="whatsapp-btn"
+    href="https://brandinglab.com.br/whatsappv"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Falar no WhatsApp"
+    title="Suporte via WhatsApp"
+  >
+    <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
 
   <!-- Lightbox global -->
   <div id="lightbox" role="dialog" aria-modal="true" aria-label="Visualizar imagem">
@@ -209,7 +205,7 @@ const {
       const total = document.body.scrollHeight - window.innerHeight;
       const pct = (window.scrollY / total) * 100;
       if (bar) bar.style.width = pct + '%';
-    });
+    }, { passive: true });
 
     // ── Lightbox ───────────────────────────────────────────
     const lb = document.getElementById('lightbox');
@@ -218,14 +214,14 @@ const {
 
     document.querySelectorAll('.gallery-img').forEach(img => {
       img.addEventListener('click', () => {
-        lbImg.src = img.src;
-        lbImg.alt = img.alt;
-        lb.classList.add('show');
+        (lbImg as HTMLImageElement).src = (img as HTMLImageElement).src;
+        (lbImg as HTMLImageElement).alt = (img as HTMLImageElement).alt;
+        lb!.classList.add('show');
         document.body.style.overflow = 'hidden';
       });
     });
     function closeLb() {
-      lb.classList.remove('show');
+      lb!.classList.remove('show');
       document.body.style.overflow = '';
     }
     lbClose?.addEventListener('click', closeLb);
@@ -236,15 +232,15 @@ const {
     document.querySelectorAll('.faq-question').forEach(btn => {
       btn.addEventListener('click', () => {
         const item = btn.closest('.faq-item');
-        const answer = btn.nextElementSibling;
-        const isOpen = item.classList.contains('open');
+        const answer = btn.nextElementSibling as HTMLElement;
+        const isOpen = item!.classList.contains('open');
         document.querySelectorAll('.faq-item').forEach(i => {
           i.classList.remove('open');
-          const a = i.querySelector('.faq-answer');
+          const a = i.querySelector('.faq-answer') as HTMLElement;
           if (a) a.style.maxHeight = '';
         });
         if (!isOpen) {
-          item.classList.add('open');
+          item!.classList.add('open');
           answer.style.maxHeight = answer.scrollHeight + 'px';
         }
       });
@@ -261,32 +257,27 @@ const {
     }, { threshold: 0.3 });
     document.querySelectorAll('.ink-divider').forEach(el => observer.observe(el));
 
-    // ── GSAP animations (carrega após GSAP estar disponível) ──
+    // ── GSAP animations ────────────────────────────────────
     window.addEventListener('load', () => {
       if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
       gsap.registerPlugin(ScrollTrigger);
 
-      // Reveal genérico
-      gsap.utils.toArray('.gsap-reveal').forEach(el => {
-        gsap.to(el, {
-          opacity: 1, y: 0, duration: 0.8, ease: 'power2.out',
+      gsap.utils.toArray('.gsap-reveal').forEach((el: any) => {
+        gsap.to(el, { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out',
           scrollTrigger: { trigger: el, start: 'top 88%' }
         });
       });
-      gsap.utils.toArray('.gsap-reveal-left').forEach(el => {
-        gsap.to(el, {
-          opacity: 1, x: 0, duration: 0.8, ease: 'power2.out',
+      gsap.utils.toArray('.gsap-reveal-left').forEach((el: any) => {
+        gsap.to(el, { opacity: 1, x: 0, duration: 0.8, ease: 'power2.out',
           scrollTrigger: { trigger: el, start: 'top 88%' }
         });
       });
-      gsap.utils.toArray('.gsap-reveal-right').forEach(el => {
-        gsap.to(el, {
-          opacity: 1, x: 0, duration: 0.8, ease: 'power2.out',
+      gsap.utils.toArray('.gsap-reveal-right').forEach((el: any) => {
+        gsap.to(el, { opacity: 1, x: 0, duration: 0.8, ease: 'power2.out',
           scrollTrigger: { trigger: el, start: 'top 88%' }
         });
       });
 
-      // Stagger em grupos
       document.querySelectorAll('.gsap-stagger-group').forEach(group => {
         gsap.to(group.querySelectorAll('.gsap-stagger-item'), {
           opacity: 1, y: 0, duration: 0.6, stagger: 0.12, ease: 'power2.out',
@@ -294,7 +285,6 @@ const {
         });
       });
 
-      // Underline accent animation
       document.querySelectorAll('.gsap-underline').forEach(el => {
         ScrollTrigger.create({
           trigger: el, start: 'top 85%', once: true,
@@ -302,33 +292,23 @@ const {
         });
       });
 
-      // Parallax hero book
       const heroBook = document.getElementById('hero-book');
       if (heroBook) {
-        gsap.to(heroBook, {
-          y: 60,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: '#hero',
-            start: 'top top',
-            end: 'bottom top',
-            scrub: true
-          }
+        gsap.to(heroBook, { y: 60, ease: 'none',
+          scrollTrigger: { trigger: '#hero', start: 'top top', end: 'bottom top', scrub: true }
         });
       }
 
-      // Contador animado
-      document.querySelectorAll('.count-up').forEach(el => {
+      document.querySelectorAll('.count-up').forEach((el: any) => {
         const target = parseInt(el.dataset.target, 10);
         ScrollTrigger.create({
-          trigger: el,
-          start: 'top 85%',
-          once: true,
+          trigger: el, start: 'top 85%', once: true,
           onEnter: () => {
             gsap.to({ val: 0 }, {
               val: target, duration: 1.8, ease: 'power2.out',
               onUpdate: function() {
-                el.textContent = Math.round(this.targets()[0].val).toLocaleString('pt-BR');
+                const v = Math.round(this.targets()[0].val);
+                el.textContent = v >= 1000 ? (v/1000).toFixed(0) + 'k' : v.toString();
               }
             });
           }
@@ -336,5 +316,99 @@ const {
       });
     });
   </script>
+
+  <!-- Facebook Pixel (carregado após load para não bloquear Web Vitals) -->
+  <script>
+    window.addEventListener('load', function() {
+      (function(f: any, b: any, e: any, v: any, n?: any, t?: any, s?: any) {
+        if (f.fbq) return; n = f.fbq = function() {
+          n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+        n.queue = []; t = b.createElement(e); t.async = !0; t.src = v;
+        s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s);
+      })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+      (window as any).fbq('init', '312013813570996');
+      (window as any).fbq('track', 'PageView');
+    }, { once: true });
+  </script>
+
+  <!-- UTM Tracking (carregado no DOMContentLoaded) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Script de rastreio de UTMs
+      (function () {
+        function getParameterByName(name: string, url?: string) {
+          if (!url) url = window.location.href;
+          name = name.replace(/[\[\]]/g, "\\$&");
+          var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"), results = regex.exec(url);
+          if (!results) return null;
+          if (!results[2]) return '';
+          return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+        function setCookie(n: string, v: string, t: number) {
+          var d = new Date(); d.setTime(d.getTime() + t * 1000);
+          document.cookie = n + "=" + v + "; expires=" + d.toUTCString() + "; path=/";
+        }
+        function getCookieValue(name: string) {
+          const v = `; ${document.cookie}`, p = v.split(`; ${name}=`);
+          if (p.length === 2) return p.pop()!.split(';').shift()!;
+          return null;
+        }
+        const adParams = ['fbclid', 'gclid'];
+        const urlParams = new URLSearchParams(window.location.search);
+        let isAdClick = false;
+        adParams.forEach(p => { if (urlParams.has(p)) isAdClick = true; });
+        if (isAdClick) {
+          const src = getParameterByName('utm_source'), med = getParameterByName('utm_medium'),
+            camp = getParameterByName('utm_campaign'), cont = getParameterByName('utm_content'),
+            term = getParameterByName('utm_term');
+          if (src) setCookie('cookieUtmSource', src, 63072000);
+          if (med) setCookie('cookieUtmMedium', med, 63072000);
+          if (camp) setCookie('cookieUtmCampaign', camp, 63072000);
+          if (cont) setCookie('cookieUtmContent', cont, 63072000);
+          if (term) setCookie('cookieUtmTerm', term, 63072000);
+        }
+        const utmKeys = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"];
+        const urlParamsCaptReferrer = new URLSearchParams(document.referrer.split('?')[1] || '');
+        let utms: Record<string, string> = {};
+        utmKeys.forEach(el => {
+          if (el === "utm_source") {
+            utms[el] = urlParams.get(el) ?? (document.referrer ? (urlParamsCaptReferrer.get(el) ?? new URL(document.referrer).hostname) : "direto");
+          } else {
+            utms[el] = urlParams.get(el) ?? (urlParamsCaptReferrer.get(el) ?? "");
+          }
+        });
+        const cSrc = getCookieValue('cookieUtmSource'), cMed = getCookieValue('cookieUtmMedium'),
+          cCamp = getCookieValue('cookieUtmCampaign'), cCont = getCookieValue('cookieUtmContent'),
+          cTerm = getCookieValue('cookieUtmTerm');
+        let scks = Object.values(utms).filter(v => v !== "");
+        const currentSck = urlParams.get('sck') ? urlParams.get('sck')!.split('|') : [];
+        scks = scks.filter(v => !currentSck.includes(v));
+        const srcValues = [cSrc, cMed, cCamp, cCont, cTerm].filter((v): v is string => v !== null && v !== "");
+        const updateLinks = (el: HTMLAnchorElement, elURL: URL) => {
+          const sp = new URLSearchParams(elURL.search);
+          let modified = false;
+          urlParams.forEach((v, k) => { if (!sp.has(k)) { sp.append(k, v); modified = true; } });
+          for (let k in utms) { if (!sp.has(k)) { sp.append(k, utms[k]); modified = true; } }
+          if (cSrc) sp.append('cookieUtmSource', cSrc);
+          if (cMed) sp.append('cookieUtmMedium', cMed);
+          if (cCamp) sp.append('cookieUtmCampaign', cCamp);
+          if (cCont) sp.append('cookieUtmContent', cCont);
+          if (cTerm) sp.append('cookieUtmTerm', cTerm);
+          if (!sp.has('sck') && scks.length > 0) { sp.append('sck', scks.join('|')); modified = true; }
+          if (!sp.has('src') && srcValues.length > 0) { sp.append('src', srcValues.join('|')); modified = true; }
+          return modified ? elURL.origin + elURL.pathname + "?" + sp.toString() : el.href;
+        };
+        document.querySelectorAll('a').forEach((el: any) => {
+          try {
+            const elURL = new URL(el.href, window.location.origin);
+            if (!elURL.hash) el.href = updateLinks(el, elURL);
+          } catch (e) {}
+        });
+      })();
+    }, { once: true });
+  </script>
+
 </body>
 </html>
