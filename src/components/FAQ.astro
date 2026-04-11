@@ -1,58 +1,31 @@
 ---
 const faqs = [
-  {
-    q: "Em quanto tempo recebo a minha versão física?",
-    a: "Seu pedido será embalado em até 3 dias úteis após a confirmação do pagamento. Assim que estiver em trânsito para a sua casa você receberá um código de rastreio por e-mail para acompanhar no site dos Correios.",
-  },
-  {
-    q: "Ao comprar a versão física, também ganho a versão digital?",
-    a: "Fique atenta ao combo escolhido na hora da sua compra. Nossa opção mais indicada é a que você leva todas as versões: Digital + Física + Bônus. Mas você pode optar por comprar apenas o digital. Fica a seu critério!",
-  },
-  {
-    q: "Serve para marca pessoal?",
-    a: "Todas as lições do livro são voltadas para construção de marca e negócio. Se você tem ou quer ter uma equipe, quer aplicar estratégias de branding atuais, criar produtos e aprender sobre planejamento, com certeza o 365DB vai te ajudar.",
-  },
-  {
-    q: "Serve para quem quer aprender sobre branding e trabalhar com isso?",
-    a: "O livro possui linguagem extremamente acessível para pessoas que não são profissionais de branding — sem termos técnicos excessivos. É direcionado para empreendedoras, mas se você estuda Branding e quer ter uma visão geral estratégica ele certamente vai te ajudar.",
-  },
-  {
-    q: "Ele possui exercícios que já existem nos seus outros livros?",
-    a: "É possível que você encontre alguns exercícios vistos em outros livros ou programas Branding Lab. Porém, tomamos o cuidado de incluir apenas exercícios cruciais e de produtos que saíram do ar em 2022.",
-  },
-  {
-    q: "Serve para qualquer nicho?",
-    a: "Sim, este é um guia extremamente democrático. Você terá uma visão geral e bastante atual de marketing e de tudo o que está acontecendo. As aplicações na sua marca devem ser adaptadas conforme fizer sentido para a sua empresa.",
-  },
-  {
-    q: "Ele me ajudará a ter ideias de posts para o Instagram?",
-    a: "Este não é um livro apenas sobre Instagram. É um livro que te dará uma visão geral com exercícios práticos de Branding que podem ser aplicados no Instagram ou fora dele. O foco não é ensinar sobre posts ou linha editorial, apesar de falarmos sobre isso.",
-  },
-  {
-    q: "Não tenho equipe ainda, o livro servirá para mim?",
-    a: "Sim. Independente do tamanho da sua equipe — ou se você é 'euquipe' — este livro irá te ajudar de diversas maneiras.",
-  },
+  { q: "Em quanto tempo recebo a minha versão física?", a: "Seu pedido será embalado em até 3 dias úteis após a confirmação do pagamento. Assim que estiver em trânsito você receberá um código de rastreio por e-mail para acompanhar pelos Correios." },
+  { q: "Ao comprar a versão física, também ganho a versão digital?", a: "Nossa opção mais indicada inclui Digital + Física + Bônus. Você também pode optar por comprar apenas o digital. Fique atenta ao combo escolhido na hora da compra!" },
+  { q: "Serve para marca pessoal?", a: "Todas as lições são voltadas para construção de marca e negócio. Se você quer aplicar estratégias de branding atuais, criar produtos e aprender sobre planejamento, o 365DB vai te ajudar." },
+  { q: "Serve para quem quer aprender sobre branding e trabalhar com isso?", a: "O livro tem linguagem acessível para pessoas que não são profissionais de branding. É direcionado para empreendedoras, mas se você estuda Branding e quer visão geral estratégica ele certamente vai te ajudar." },
+  { q: "Ele possui exercícios que já existem nos seus outros livros?", a: "É possível encontrar alguns exercícios vistos em outros produtos, porém tomamos o cuidado de incluir apenas exercícios cruciais e de produtos que saíram do ar." },
+  { q: "Serve para qualquer nicho?", a: "Sim, este é um guia extremamente democrático. Você terá visão geral e atual de marketing e de tudo que está acontecendo. As aplicações devem ser adaptadas conforme fizer sentido para a sua empresa." },
+  { q: "Ele me ajudará a ter ideias de posts para o Instagram?", a: "Este não é um livro apenas sobre Instagram. É um guia com exercícios práticos de Branding que podem ser aplicados no Instagram ou fora dele. O foco não é linha editorial, apesar de falarmos sobre isso." },
+  { q: "Não tenho equipe ainda, o livro servirá para mim?", a: "Sim. Independente do tamanho da sua equipe — ou se você é 'euquipe' — este livro irá te ajudar de diversas maneiras." },
 ];
 ---
-<section class="bg-surface-off py-20" aria-label="Perguntas frequentes sobre o 365 Dias de Branding">
+<section class="bg-surface-warm py-20" aria-label="Perguntas frequentes">
   <div class="max-w-3xl mx-auto px-4 sm:px-6">
 
     <div class="text-center mb-12">
-      <span class="badge bg-brand-cyan/15 text-brand-cyan mb-3 w-fit mx-auto">Tira-dúvidas</span>
+      <span class="badge bg-accent-light text-accent mb-3 w-fit mx-auto">Tira-dúvidas</span>
       <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-brand-ink gsap-reveal">
         Perguntas Frequentes
       </h2>
     </div>
 
     <div class="space-y-3">
-      {faqs.map((faq, i) => (
+      {faqs.map((faq) => (
         <div class="faq-item bg-white rounded-2xl border border-gray-100 overflow-hidden">
-          <button
-            class="faq-question w-full flex items-center justify-between gap-4 text-left px-6 py-5 font-heading font-bold text-brand-ink hover:text-brand-cyan transition-colors duration-200"
-            aria-expanded="false"
-          >
+          <button class="faq-question w-full flex items-center justify-between gap-4 text-left px-6 py-5 font-heading font-bold text-brand-ink hover:text-accent transition-colors duration-200" aria-expanded="false">
             <span>{faq.q}</span>
-            <span class="faq-icon flex-shrink-0 w-6 h-6 rounded-full bg-brand-cyan/10 flex items-center justify-center text-brand-cyan font-bold text-lg leading-none">+</span>
+            <span class="faq-icon flex-shrink-0 w-6 h-6 rounded-full bg-accent-light flex items-center justify-center text-accent font-bold text-lg leading-none">+</span>
           </button>
           <div class="faq-answer px-6">
             <p class="text-gray-500 text-sm leading-relaxed pb-5">{faq.a}</p>

@@ -3,110 +3,120 @@ const checkoutDigital = "https://pay.hotmart.com/U90901956S?checkoutMode=10";
 const checkoutFisico  = "https://pay.hotmart.com/N101767351A?checkoutMode=10";
 const whatsappLink    = "https://brandinglab.com.br/whatsapp";
 ---
-<section id="pricing" class="bg-brand-navy py-24" aria-label="Preços e planos">
+<section id="pricing" class="bg-surface-warm py-24" aria-label="Preços e planos">
   <div class="max-w-6xl mx-auto px-4 sm:px-6">
 
-    <!-- Recapitulação valor -->
+    <!-- Valor total e âncora de preço -->
     <div class="text-center mb-16 gsap-reveal">
-      <span class="badge bg-brand-cyan/20 text-brand-cyan mb-4 w-fit mx-auto">O que você vai receber</span>
-      <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-white mb-3">
+      <span class="badge bg-accent-light text-accent mb-4 w-fit mx-auto">O que você vai receber</span>
+      <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-brand-ink mb-3">
         Tudo isso valeria
-        <span class="line-through text-gray-500 ml-1">R$ 761,00</span>
+        <span class="line-through text-gray-400 ml-1 font-normal">R$ 761,00</span>
       </h2>
-      <p class="text-gray-300 text-lg mb-2">Mas <strong class="text-white">esse não é nem perto</strong> o valor que você vai investir.</p>
-      <p class="text-brand-cyan font-semibold">Escolha a sua versão:</p>
+      <p class="text-gray-500 text-lg mb-2">Mas esse não é nem perto o valor que você vai investir hoje.</p>
+      <p class="text-accent font-semibold">Escolha a sua versão:</p>
     </div>
 
-    <!-- Cards de preço -->
+    <!-- Cards — Físico+Digital PRIMEIRO (âncora de preço alto → digital parece promoção) -->
     <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
 
-      <!-- Versão Digital -->
-      <div class="gsap-reveal-left bg-white rounded-3xl p-8 border-2 border-gray-200 flex flex-col">
-        <div class="mb-6">
-          <span class="badge bg-surface-off text-gray-500 mb-3 w-fit">Mais acessível</span>
-          <h3 class="font-heading font-extrabold text-2xl text-brand-ink mb-1">Versão Digital + Bônus</h3>
-          <p class="text-sm text-gray-400">Acesso imediato após a compra</p>
-        </div>
-
-        <div class="mb-6">
-          <div class="flex items-end gap-2 mb-1">
-            <span class="font-heading font-extrabold text-4xl text-brand-cyan">3x R$87,31</span>
-          </div>
-          <p class="text-sm text-gray-400">ou <strong class="text-brand-ink">R$247,00 à vista</strong></p>
-        </div>
-
-        <ul class="space-y-3 mb-8 flex-1">
-          {[
-            "Bônus exclusivos inclusos",
-            "Acesso imediato ao arquivo digital",
-            "PDF para ler no PC, tablet ou smartphone",
-            "Planilha 365 Making no Google Drive",
-            "MasterClass de Planejamento Estratégico (3h)",
-          ].map((item) => (
-            <li class="flex items-start gap-3 text-sm text-gray-600">
-              <svg class="mt-0.5 flex-shrink-0 w-4 h-4 text-brand-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-              {item}
-            </li>
-          ))}
-        </ul>
-
-        <a
-          href={checkoutDigital}
-          class="btn-shimmer block w-full text-center bg-brand-dark text-white font-heading font-bold py-4 rounded-2xl hover:bg-brand-cyan hover:text-brand-navy transition-colors duration-300"
-        >
-          Quero o 365DB Digital!
-        </a>
-      </div>
-
-      <!-- Versão Física + Digital (destaque) -->
-      <div class="gsap-reveal-right bg-white rounded-3xl p-8 border-2 border-brand-cyan relative flex flex-col shadow-xl shadow-brand-cyan/20">
-        <!-- Badge popular -->
+      <!-- ★ CARD 1: Físico + Digital (destaque, preço âncora) -->
+      <div class="gsap-reveal-left bg-white rounded-3xl p-8 border-2 border-accent relative flex flex-col shadow-xl shadow-accent/15 order-1">
+        <!-- Badge recomendado -->
         <div class="absolute -top-4 left-1/2 -translate-x-1/2">
-          <span class="badge bg-gradient-brand text-brand-navy shadow-lg">⭐ Mais popular</span>
+          <span class="badge bg-accent text-white shadow-md">⭐ Recomendado</span>
         </div>
 
-        <div class="mb-6 mt-2">
+        <div class="mb-5 mt-2">
           <h3 class="font-heading font-extrabold text-2xl text-brand-ink mb-1">Físico + Digital + Bônus</h3>
-          <p class="text-sm text-gray-400">Receba em casa a versão impressa + digital imediato</p>
+          <p class="text-sm text-gray-400">Receba em casa + acesso digital imediato</p>
         </div>
 
-        <!-- Imagem do produto -->
+        <!-- Imagem mockup físico — sem shadow pois é mockup com fundo transparente/branco -->
         <img
           src="/imgs/paginas-internas/365-branding-fisico-e-digital.avif"
           alt="Versão física e digital do livro 365 Dias de Branding"
-          width="300"
-          height="180"
+          width="340" height="200"
           loading="lazy"
-          class="w-full rounded-xl mb-5 object-cover"
+          class="w-full rounded-xl mb-5 object-contain"
         />
 
-        <div class="mb-6">
-          <div class="flex items-end gap-2 mb-1">
-            <span class="font-heading font-extrabold text-4xl text-brand-cyan">3x R$129,72</span>
+        <div class="mb-5">
+          <div class="flex items-baseline gap-2 mb-1">
+            <span class="font-heading font-extrabold text-4xl text-accent">3x R$129,72</span>
           </div>
           <p class="text-sm text-gray-400">ou <strong class="text-brand-ink">R$367,00 à vista</strong></p>
         </div>
 
         <ul class="space-y-3 mb-8 flex-1">
           {[
-            "Tudo da versão digital",
             "Livro físico impresso enviado para sua casa",
             "Tamanho 14,5×19 cm · 200 páginas · Colorido",
-            "Embalado com carinho pelos Correios",
-            "Envio apenas no Brasil",
+            "Acesso imediato ao arquivo digital (PDF)",
+            "Planilha 365 Making no Google Drive",
+            "MasterClass de Planejamento Estratégico (3h)",
+            "Embalado com carinho, enviado pelos Correios",
           ].map((item) => (
             <li class="flex items-start gap-3 text-sm text-gray-600">
-              <svg class="mt-0.5 flex-shrink-0 w-4 h-4 text-brand-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              <svg class="mt-0.5 flex-shrink-0 w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
               {item}
             </li>
           ))}
         </ul>
 
-        <a
-          href={checkoutFisico}
-          class="btn-shimmer block w-full text-center bg-brand-cyan text-brand-navy font-heading font-bold py-4 rounded-2xl hover:bg-brand-dark hover:text-white transition-colors duration-300"
-        >
+        <a href={checkoutFisico} target="_blank" rel="noopener noreferrer"
+          class="btn-shimmer block w-full text-center bg-accent text-white font-heading font-bold py-4 rounded-2xl hover:bg-accent-dark transition-colors duration-300 shadow-md shadow-accent/25">
           Quero o 365DB Físico + Digital!
+        </a>
+        <p class="text-center text-xs text-gray-400 mt-3">Envio apenas no Brasil · Rastreio por Correios</p>
+      </div>
+
+      <!-- CARD 2: Digital (posicionado como alternativa acessível após a âncora) -->
+      <div class="gsap-reveal-right bg-white rounded-3xl p-8 border-2 border-gray-200 flex flex-col order-2">
+        <div class="mb-5">
+          <span class="badge bg-surface-warm text-gray-500 mb-3 w-fit">Mais acessível</span>
+          <h3 class="font-heading font-extrabold text-2xl text-brand-ink mb-1">Digital + Bônus</h3>
+          <p class="text-sm text-gray-400">Acesso imediato após a compra</p>
+        </div>
+
+        <!-- Imagem mockup digital — sem shadow (mockup com fundo transparente/branco) -->
+        <img
+          src="/imgs/paginas-internas/365-branding-digital.avif"
+          alt="Versão digital do livro 365 Dias de Branding"
+          width="340" height="200"
+          loading="lazy"
+          class="w-full rounded-xl mb-5 object-contain"
+        />
+
+        <div class="mb-5">
+          <div class="flex items-baseline gap-2 mb-1">
+            <span class="font-heading font-extrabold text-4xl text-brand-ink">3x R$87,31</span>
+          </div>
+          <p class="text-sm text-gray-400">ou <strong class="text-brand-ink">R$247,00 à vista</strong></p>
+          <p class="text-xs text-accent font-semibold mt-1">R$120 a menos que a versão completa</p>
+        </div>
+
+        <ul class="space-y-3 mb-8 flex-1">
+          {[
+            "Acesso imediato ao arquivo digital (PDF)",
+            "PDF para PC, tablet ou smartphone",
+            "Planilha 365 Making no Google Drive",
+            "MasterClass de Planejamento Estratégico (3h)",
+          ].map((item) => (
+            <li class="flex items-start gap-3 text-sm text-gray-600">
+              <svg class="mt-0.5 flex-shrink-0 w-4 h-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              {item}
+            </li>
+          ))}
+          <li class="flex items-start gap-3 text-sm text-gray-400 line-through">
+            <svg class="mt-0.5 flex-shrink-0 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+            Livro físico impresso
+          </li>
+        </ul>
+
+        <a href={checkoutDigital} target="_blank" rel="noopener noreferrer"
+          class="btn-shimmer block w-full text-center bg-brand-dark text-white font-heading font-bold py-4 rounded-2xl hover:bg-brand-ink transition-colors duration-300">
+          Quero o 365DB Digital
         </a>
       </div>
 
@@ -114,15 +124,10 @@ const whatsappLink    = "https://brandinglab.com.br/whatsapp";
 
     <!-- WhatsApp dúvidas -->
     <div class="text-center mt-10 gsap-reveal">
-      <p class="text-gray-400 mb-4">Não sabe o que escolher? Quer um atendimento especial?</p>
-      <a
-        href={whatsappLink}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-flex items-center gap-2 bg-[#25D366] text-white font-semibold px-6 py-3 rounded-full hover:bg-[#1ebe5b] transition-colors"
-      >
-        <!-- WhatsApp icon -->
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.570-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      <p class="text-gray-400 mb-4 text-sm">Não sabe o que escolher? Quer um atendimento especial?</p>
+      <a href={whatsappLink} target="_blank" rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 bg-[#25D366] text-white font-semibold px-6 py-3 rounded-full hover:bg-[#1ebe5b] transition-colors text-sm">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.570-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         Chamar no WhatsApp
       </a>
     </div>

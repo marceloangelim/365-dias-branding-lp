@@ -1,18 +1,14 @@
 ---
 const igDepos = [
-  { file: "Depoimento_365_DB_1.jpeg", alt: "Depoimento de cliente no Instagram — 365 Dias de Branding" },
-  { file: "Depoimento_365_DB_2.jpeg", alt: "Depoimento de cliente no Instagram — 365 Dias de Branding" },
-  { file: "Depoimento_365_DB_3.jpeg", alt: "Depoimento de cliente no Instagram — 365 Dias de Branding" },
-  { file: "Depoimento_365_DB_4.jpeg", alt: "Depoimento de cliente no Instagram — 365 Dias de Branding" },
-  { file: "Depoimento_365_DB_5.jpeg", alt: "Depoimento de cliente no Instagram — 365 Dias de Branding" },
-  { file: "Depoimento_365_DB_6.jpeg", alt: "Depoimento de cliente no Instagram — 365 Dias de Branding" },
+  "Depoimento_365_DB_1.jpeg","Depoimento_365_DB_2.jpeg","Depoimento_365_DB_3.jpeg",
+  "Depoimento_365_DB_4.jpeg","Depoimento_365_DB_5.jpeg","Depoimento_365_DB_6.jpeg",
 ];
 ---
-<section class="bg-surface-off py-20" aria-label="Depoimentos e resultados de clientes">
+<section class="bg-surface-warm py-20" aria-label="Depoimentos de clientes">
   <div class="max-w-6xl mx-auto px-4 sm:px-6">
 
     <div class="text-center mb-12">
-      <span class="badge bg-brand-purple/15 text-brand-purple mb-3 w-fit mx-auto">Resultados reais</span>
+      <span class="badge bg-accent-light text-accent mb-3 w-fit mx-auto">Resultados reais</span>
       <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-brand-ink gsap-reveal">
         Olha os resultados de quem já está aplicando
       </h2>
@@ -22,12 +18,11 @@ const igDepos = [
       {igDepos.map((dep) => (
         <div class="gsap-stagger-item">
           <img
-            src={`/imgs/depoimentos/${dep.file}`}
-            alt={dep.alt}
-            width="400"
-            height="600"
+            src={`/imgs/depoimentos/${dep}`}
+            alt="Depoimento de cliente — 365 Dias de Branding"
+            width="400" height="600"
             loading="lazy"
-            class="gallery-img w-full h-auto rounded-2xl shadow-sm cursor-zoom-in hover:shadow-md hover:scale-[1.02] transition-all duration-300"
+            class="gallery-img w-full h-auto rounded-2xl cursor-zoom-in hover:scale-[1.02] transition-transform duration-300"
           />
         </div>
       ))}

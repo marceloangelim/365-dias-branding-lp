@@ -1,31 +1,20 @@
 ---
 const clientPhotos = [
-  { file: "Depoimento_365_Foto1000-768x1149.webp", alt: "Cliente com o livro 365 Dias de Branding" },
-  { file: "Depoimento_365_Foto1001.webp",           alt: "Cliente com o livro 365 Dias de Branding" },
-  { file: "Depoimento_365_Foto1002.webp",           alt: "Cliente com o livro 365 Dias de Branding" },
-  { file: "Depoimento_365_Foto1003.webp",           alt: "Cliente com o livro 365 Dias de Branding" },
-  { file: "Depoimento_365_Foto1004.webp",           alt: "Cliente com o livro 365 Dias de Branding" },
-  { file: "Depoimento_365_Foto1008.webp",           alt: "Cliente com o livro 365 Dias de Branding" },
-  { file: "Depoimento_365_Foto1010-768x954.webp",   alt: "Cliente com o livro 365 Dias de Branding" },
-  { file: "Depoimento_365_Foto1013-768x1118.webp",  alt: "Cliente com o livro 365 Dias de Branding" },
-  { file: "Depoimento_365_Foto1014-768x1058.webp",  alt: "Cliente com o livro 365 Dias de Branding" },
-  { file: "Depoimento_365_Foto1014b-768x1058.webp", alt: "Cliente com o livro 365 Dias de Branding" },
-  { file: "Depoimento_365_Foto1015-768x944.webp",   alt: "Cliente com o livro 365 Dias de Branding" },
-  { file: "Depoimento_365_Foto1017-768x1290.webp",  alt: "Cliente com o livro 365 Dias de Branding" },
-  { file: "Depoimento_365_Foto1018-768x1072.webp",  alt: "Cliente com o livro 365 Dias de Branding" },
-  { file: "Depoimento_365_Foto1019-768x1247.webp",  alt: "Cliente com o livro 365 Dias de Branding" },
-  { file: "Depoimento_365_Foto1020-768x1201.webp",  alt: "Cliente com o livro 365 Dias de Branding" },
-  { file: "cliente_stories_1.webp",                 alt: "Story de cliente com o 365 Dias de Branding" },
-  { file: "cliente_stories_2.webp",                 alt: "Story de cliente com o 365 Dias de Branding" },
-  { file: "cliente_stories_3.webp",                 alt: "Story de cliente com o 365 Dias de Branding" },
-  { file: "cliente_stories_4.webp",                 alt: "Story de cliente com o 365 Dias de Branding" },
+  "Depoimento_365_Foto1000-768x1149.webp","Depoimento_365_Foto1001.webp","Depoimento_365_Foto1002.webp",
+  "Depoimento_365_Foto1003.webp","Depoimento_365_Foto1004.webp","Depoimento_365_Foto1008.webp",
+  "Depoimento_365_Foto1010-768x954.webp","Depoimento_365_Foto1013-768x1118.webp",
+  "Depoimento_365_Foto1014-768x1058.webp","Depoimento_365_Foto1014b-768x1058.webp",
+  "Depoimento_365_Foto1015-768x944.webp","Depoimento_365_Foto1017-768x1290.webp",
+  "Depoimento_365_Foto1018-768x1072.webp","Depoimento_365_Foto1019-768x1247.webp",
+  "Depoimento_365_Foto1020-768x1201.webp",
+  "cliente_stories_1.webp","cliente_stories_2.webp","cliente_stories_3.webp","cliente_stories_4.webp",
 ];
 ---
 <section class="bg-white py-20" aria-label="Fotos de clientes com o livro">
   <div class="max-w-6xl mx-auto px-4 sm:px-6">
 
     <div class="text-center mb-12">
-      <span class="badge bg-brand-cyan/15 text-brand-cyan mb-3 w-fit mx-auto">Prova social real</span>
+      <span class="badge bg-accent-light text-accent mb-3 w-fit mx-auto">Prova social real</span>
       <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-brand-ink gsap-reveal">
         Elas compraram e amaram 😍
       </h2>
@@ -35,10 +24,9 @@ const clientPhotos = [
       {clientPhotos.map((photo) => (
         <div class="gsap-stagger-item break-inside-avoid">
           <img
-            src={`/imgs/clientes/${photo.file}`}
-            alt={photo.alt}
-            width="300"
-            height="400"
+            src={`/imgs/clientes/${photo}`}
+            alt="Cliente com o livro 365 Dias de Branding"
+            width="300" height="400"
             loading="lazy"
             class="gallery-img w-full h-auto rounded-xl cursor-zoom-in hover:scale-[1.02] transition-transform duration-300"
           />

@@ -4,26 +4,25 @@
   <div class="max-w-6xl mx-auto px-4 sm:px-6">
     <div class="grid md:grid-cols-2 gap-14 items-center">
 
-      <!-- Imagem -->
+      <!-- Imagem — foto real, shadow OK -->
       <div class="gsap-reveal-left relative">
-        <div class="absolute -inset-4 bg-gradient-to-br from-brand-cyan/10 to-brand-purple/10 rounded-3xl blur-2xl pointer-events-none"></div>
+        <div class="absolute -inset-4 bg-accent/8 rounded-3xl blur-2xl pointer-events-none"></div>
         <img
           src="/imgs/empresarias-branding-lab.avif"
           alt="Empreendedoras da Branding Lab"
-          width="540"
-          height="560"
+          width="540" height="560"
           loading="lazy"
-          class="relative rounded-2xl shadow-xl w-full object-cover"
+          class="relative rounded-2xl shadow-lg w-full object-cover"
         />
       </div>
 
       <!-- Copy -->
       <div class="gsap-reveal-right">
-        <span class="badge bg-brand-cyan/15 text-brand-cyan mb-4 w-fit">A solução</span>
+        <span class="badge bg-accent-light text-accent mb-4 w-fit">A solução</span>
         <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-brand-ink mb-4">
           O 365DB é o guia que vai mudar isso
         </h2>
-        <span class="ink-divider block mb-8" style="max-width:80px"></span>
+        <span class="ink-divider block mb-8" style="max-width:70px"></span>
 
         <p class="text-gray-500 mb-8 leading-relaxed">
           Um <strong class="text-brand-ink">Guia Prático com 365 exercícios</strong> para todos os dias do ano,
@@ -31,7 +30,6 @@
           na internet e no mundo.
         </p>
 
-        <!-- Outcomes -->
         <div class="space-y-4">
           {[
             "365 ações práticas para criar ou gerir a sua marca todos os dias do ano",
@@ -40,18 +38,15 @@
             "Direcionamento para posicionar a sua marca no digital e construir sua liberdade",
           ].map((item) => (
             <div class="flex gap-3 items-start">
-              <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-brand-cyan/20 flex items-center justify-center">
-                <svg class="w-3 h-3 text-brand-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-accent-light flex items-center justify-center">
+                <svg class="w-3 h-3 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
               </span>
               <p class="text-gray-600 text-sm leading-relaxed">{item}</p>
             </div>
           ))}
         </div>
 
-        <a
-          href="#pricing"
-          class="btn-shimmer mt-10 inline-flex items-center gap-2 bg-brand-dark text-white font-heading font-bold px-7 py-3.5 rounded-full hover:bg-brand-cyan hover:text-brand-navy transition-colors duration-300"
-        >
+        <a href="#pricing" class="btn-shimmer mt-10 inline-flex items-center gap-2 bg-accent text-white font-heading font-bold px-7 py-3.5 rounded-full hover:bg-accent-dark transition-colors duration-300">
           Sim, quero o Guia Prático 365DB!
         </a>
       </div>

@@ -1,66 +1,57 @@
 ---
 const sections = [
   {
-    num: "01",
-    title: "Fundamentos",
-    color: "brand-cyan",
-    colorHex: "#00ccdf",
+    num: "01", title: "Fundamentos",
+    borderColor: "#E8572A",
+    labelColor: "#E8572A",
     description: "Orientações baseadas em grandes autores, direção de mentalidade e as principais preocupações na construção e gestão da sua marca.",
     pages: ["365sb-fund-01.avif","365sb-fund-02.avif","365sb-fund-03.avif","365sb-fund-04.avif","365sb-fund-05.avif"],
   },
   {
-    num: "02",
-    title: "Planejamento",
-    color: "brand-purple",
-    colorHex: "#d387fe",
+    num: "02", title: "Planejamento",
+    borderColor: "#C44820",
+    labelColor: "#C44820",
     description: "Orientações e o que você deve começar a planejar após tomar as decisões de Fundamentos. Hora de planejar detalhes inteligentes e próximos passos.",
     pages: ["365sb-plan-01.avif","365sb-plan-02.avif","365sb-plan-03.avif","365sb-plan-04.avif","365sb-plan-05.avif"],
   },
   {
-    num: "03",
-    title: "Execução",
-    color: "brand-cyan",
-    colorHex: "#00ccdf",
-    description: "A maior parte das atividades práticas. Você terá atividades para todos os dias do ano — todo o livro é prático, mas esta parte concentra o fazer.",
+    num: "03", title: "Execução",
+    borderColor: "#F4956A",
+    labelColor: "#F4956A",
+    description: "A maior parte das atividades práticas. Você terá atividades para todos os dias do ano — o capítulo mais extenso e completo do guia.",
     pages: ["365sb-exec-01.avif","365sb-exec-02.avif","365sb-exec-03.avif","365sb-exec-04.avif","365sb-exec-05.avif"],
   },
 ];
 ---
-<section class="bg-surface-off py-20" aria-label="O que tem dentro do livro">
+<section class="bg-surface-warm py-20" aria-label="O que tem dentro do livro">
   <div class="max-w-6xl mx-auto px-4 sm:px-6">
 
     <div class="text-center mb-4">
-      <span class="badge bg-brand-purple/15 text-brand-purple">Como o 365DB é por dentro</span>
+      <span class="badge bg-accent-light text-accent">Como o 365DB é por dentro</span>
     </div>
     <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-brand-ink text-center mb-4 gsap-reveal">
-      Material 100% prático dividido em 3 partes
+      Material 100% prático em 3 partes
     </h2>
-    <span class="ink-divider block mx-auto mb-16" style="max-width:120px"></span>
+    <span class="ink-divider block mx-auto mb-14" style="max-width:100px"></span>
 
     <div class="grid md:grid-cols-3 gap-8">
       {sections.map((sec) => (
-        <div class="book-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-lg transition-shadow duration-300" style="transform-origin: left center;">
-          <!-- Header colorido -->
-          <div class="px-6 pt-6 pb-4" style={`border-top: 4px solid ${sec.colorHex}`}>
-            <span class="text-xs font-bold tracking-widest uppercase" style={`color: ${sec.colorHex}`}>Parte {sec.num}</span>
+        <div class="book-card bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-md transition-shadow duration-300" style="transform-origin: left center;">
+          <div class="px-6 pt-6 pb-4" style={`border-top: 4px solid ${sec.borderColor}`}>
+            <span class="text-xs font-bold tracking-widest uppercase" style={`color: ${sec.labelColor}`}>Parte {sec.num}</span>
             <h3 class="font-heading font-extrabold text-2xl text-brand-ink mt-1">{sec.title}</h3>
           </div>
-
-          <!-- Descrição -->
           <p class="px-6 text-sm text-gray-500 leading-relaxed mb-5">{sec.description}</p>
-
-          <!-- Strip de páginas internas -->
           <div class="px-6 pb-6">
             <p class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">Páginas de exemplo:</p>
             <div class="flex gap-2 overflow-x-auto pb-1">
               {sec.pages.map((page, i) => (
                 <img
                   src={`/imgs/paginas-internas/${page}`}
-                  alt={`Página interna do capítulo ${sec.title} — exemplo ${i + 1}`}
-                  width="80"
-                  height="110"
+                  alt={`Página interna — ${sec.title} ${i + 1}`}
+                  width="80" height="110"
                   loading="lazy"
-                  class="gallery-img flex-shrink-0 w-16 h-auto rounded-lg border border-gray-200 cursor-zoom-in hover:border-brand-cyan transition-colors"
+                  class="gallery-img flex-shrink-0 w-16 h-auto rounded-lg border border-gray-200 cursor-zoom-in hover:border-accent transition-colors"
                 />
               ))}
             </div>

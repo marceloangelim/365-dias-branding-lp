@@ -4,45 +4,48 @@ export default {
   theme: {
     extend: {
       colors: {
-        brand: {
-          cyan: '#00ccdf',
-          purple: '#d387fe',
-          navy: '#0f1722',
-          dark: '#32373c',
-          ink: '#1a1a2e',
+        // ── Accent laranja (identidade do produto)
+        accent: {
+          DEFAULT: '#E8572A',
+          light:   '#FFF2ED',
+          dark:    '#C44820',
         },
+        // ── Cores da marca Branding Lab (usar só em elementos de marca: footer, logo)
+        brand: {
+          cyan:   '#00ccdf',
+          purple: '#d387fe',
+          navy:   '#0f1722',
+          dark:   '#32373c',
+          ink:    '#1a1a2e',
+        },
+        // ── Superfícies
         surface: {
           white: '#ffffff',
-          off: '#f8f6f3',
-          card: '#f2f0ed',
+          warm:  '#FAF8F6',
+          card:  '#F4F1EE',
         },
       },
       fontFamily: {
         heading: ['"Plus Jakarta Sans"', 'sans-serif'],
-        body: ['Inter', 'sans-serif'],
+        body:    ['Inter', 'sans-serif'],
       },
       backgroundImage: {
-        'gradient-brand': 'linear-gradient(135deg, #00ccdf 0%, #d387fe 100%)',
-        'gradient-brand-h': 'linear-gradient(90deg, #00ccdf 0%, #d387fe 100%)',
+        'gradient-accent': 'linear-gradient(135deg, #E8572A 0%, #F4956A 100%)',
+        'gradient-accent-h': 'linear-gradient(90deg, #E8572A 0%, #F4956A 100%)',
+        'gradient-brand':  'linear-gradient(135deg, #00ccdf 0%, #d387fe 100%)',
       },
       animation: {
         'shimmer': 'shimmer 2s linear infinite',
-        'float': 'float 6s ease-in-out infinite',
-        'ink-spread': 'inkSpread 0.8s ease-out forwards',
-        'count-up': 'countUp 1s ease-out forwards',
+        'float':   'float 6s ease-in-out infinite',
       },
       keyframes: {
         shimmer: {
-          '0%': { backgroundPosition: '-200% center' },
+          '0%':   { backgroundPosition: '-200% center' },
           '100%': { backgroundPosition: '200% center' },
         },
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-12px)' },
-        },
-        inkSpread: {
-          '0%': { width: '0%', opacity: '0' },
-          '100%': { width: '100%', opacity: '1' },
+          '50%':      { transform: 'translateY(-14px)' },
         },
       },
     },
