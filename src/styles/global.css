@@ -121,6 +121,32 @@
   letter-spacing: 0.07em; text-transform: uppercase;
 }
 
+/* ── Swiper overrides ─────────────────────────────────────── */
+.swiper-pagination-bullet-active { background: #E8572A !important; }
+.swiper-button-next, .swiper-button-prev { color: #E8572A !important; }
+.swiper-button-next::after, .swiper-button-prev::after { font-size: 1.2rem !important; }
+
+/* ── Marquee infinito (clientes) ─────────────────────────── */
+.marquee-wrapper { overflow: hidden; }
+.marquee-track {
+  display: flex;
+  gap: 12px;
+  width: max-content;
+  will-change: transform;
+}
+.marquee-track.left  { animation: marqueeLeft  50s linear infinite; }
+.marquee-track.right { animation: marqueeRight 50s linear infinite; }
+.marquee-wrapper:hover .marquee-track { animation-play-state: paused; }
+
+@keyframes marqueeLeft {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes marqueeRight {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
 /* ── Scrollbar ─────────────────────────────────────────────── */
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: #FAF8F6; }

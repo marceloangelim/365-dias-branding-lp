@@ -1,37 +1,60 @@
 ---
-// Apenas páginas internas reais do livro (sem mockups de produto)
 const pages = [
   "365sb-fund-01.avif","365sb-fund-02.avif","365sb-fund-03.avif","365sb-fund-04.avif","365sb-fund-05.avif",
   "365sb-plan-01.avif","365sb-plan-02.avif","365sb-plan-03.avif","365sb-plan-04.avif","365sb-plan-05.avif",
   "365sb-exec-01.avif","365sb-exec-02.avif","365sb-exec-03.avif","365sb-exec-04.avif","365sb-exec-05.avif",
 ];
 ---
-<section class="bg-white py-20" aria-label="Veja as páginas do livro por dentro">
+<section class="bg-white py-20 overflow-hidden" aria-label="Páginas do livro 365 Dias de Branding">
   <div class="max-w-6xl mx-auto px-4 sm:px-6">
-
     <div class="text-center mb-12">
       <span class="badge bg-accent-light text-accent mb-3 w-fit mx-auto">Conteúdo real</span>
       <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-brand-ink gsap-reveal">
         Veja por dentro
       </h2>
-      <p class="text-gray-400 mt-3 max-w-md mx-auto text-sm">
-        Clique em qualquer página para ampliar.
-      </p>
+      <p class="text-gray-400 mt-3 text-sm">Clique em qualquer página para ampliar.</p>
     </div>
+  </div>
 
-    <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-3">
+  <!-- Swiper full-bleed com efeito 3D coverflow -->
+  <div class="swiper gallery-swiper px-4">
+    <div class="swiper-wrapper py-6">
       {pages.map((page, i) => (
-        <div class="page-flip-wrap">
+        <div class="swiper-slide rounded-2xl overflow-hidden" style="width:220px">
           <img
             src={`/imgs/paginas-internas/${page}`}
             alt={`Página interna do livro 365 Dias de Branding — ${i + 1}`}
-            width="200" height="270"
+            width="220" height="300"
             loading="lazy"
-            class="gallery-img w-full h-auto rounded-xl border border-gray-100 cursor-zoom-in"
+            class="gallery-img w-full h-auto cursor-zoom-in"
           />
         </div>
       ))}
     </div>
-
+    <div class="swiper-pagination mt-4"></div>
   </div>
 </section>
+
+<script is:inline>
+  function initGallerySwiper() {
+    if (typeof Swiper === 'undefined') { setTimeout(initGallerySwiper, 200); return; }
+    new Swiper('.gallery-swiper', {
+      effect: 'coverflow',
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      loop: true,
+      autoplay: { delay: 2800, disableOnInteraction: false, pauseOnMouseEnter: true },
+      speed: 700,
+      coverflowEffect: {
+        rotate: 20,
+        stretch: 10,
+        depth: 120,
+        modifier: 1,
+        slideShadows: false,
+      },
+      pagination: { el: '.gallery-swiper .swiper-pagination', clickable: true },
+    });
+  }
+  window.addEventListener('load', initGallerySwiper);
+</script>

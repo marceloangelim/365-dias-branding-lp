@@ -1,29 +1,29 @@
 ---
 const sections = [
   {
+    id: "fund",
     num: "01", title: "Fundamentos",
-    borderColor: "#E8572A",
-    labelColor: "#E8572A",
-    description: "Orientações baseadas em grandes autores, direção de mentalidade e as principais preocupações na construção e gestão da sua marca.",
+    color: "#E8572A",
+    description: "Mentalidade, direção e as principais preocupações na construção e gestão da sua marca.",
     pages: ["365sb-fund-01.avif","365sb-fund-02.avif","365sb-fund-03.avif","365sb-fund-04.avif","365sb-fund-05.avif"],
   },
   {
+    id: "plan",
     num: "02", title: "Planejamento",
-    borderColor: "#C44820",
-    labelColor: "#C44820",
-    description: "Orientações e o que você deve começar a planejar após tomar as decisões de Fundamentos. Hora de planejar detalhes inteligentes e próximos passos.",
+    color: "#C44820",
+    description: "Planeje detalhes inteligentes e defina os próximos passos com clareza e estratégia.",
     pages: ["365sb-plan-01.avif","365sb-plan-02.avif","365sb-plan-03.avif","365sb-plan-04.avif","365sb-plan-05.avif"],
   },
   {
+    id: "exec",
     num: "03", title: "Execução",
-    borderColor: "#F4956A",
-    labelColor: "#F4956A",
-    description: "A maior parte das atividades práticas. Você terá atividades para todos os dias do ano — o capítulo mais extenso e completo do guia.",
+    color: "#F4956A",
+    description: "O maior capítulo — atividades práticas para todos os 365 dias do ano.",
     pages: ["365sb-exec-01.avif","365sb-exec-02.avif","365sb-exec-03.avif","365sb-exec-04.avif","365sb-exec-05.avif"],
   },
 ];
 ---
-<section class="bg-surface-warm py-20" aria-label="O que tem dentro do livro">
+<section class="bg-surface-warm py-20 overflow-hidden" aria-label="As 3 partes do livro">
   <div class="max-w-6xl mx-auto px-4 sm:px-6">
 
     <div class="text-center mb-4">
@@ -32,33 +32,127 @@ const sections = [
     <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-brand-ink text-center mb-4 gsap-reveal">
       Material 100% prático em 3 partes
     </h2>
-    <span class="ink-divider block mx-auto mb-14" style="max-width:100px"></span>
+    <span class="ink-divider block mx-auto mb-12" style="max-width:100px"></span>
 
-    <div class="grid md:grid-cols-3 gap-8">
-      {sections.map((sec) => (
-        <div class="book-card bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-md transition-shadow duration-300" style="transform-origin: left center;">
-          <div class="px-6 pt-6 pb-4" style={`border-top: 4px solid ${sec.borderColor}`}>
-            <span class="text-xs font-bold tracking-widest uppercase" style={`color: ${sec.labelColor}`}>Parte {sec.num}</span>
-            <h3 class="font-heading font-extrabold text-2xl text-brand-ink mt-1">{sec.title}</h3>
-          </div>
-          <p class="px-6 text-sm text-gray-500 leading-relaxed mb-5">{sec.description}</p>
-          <div class="px-6 pb-6">
-            <p class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">Páginas de exemplo:</p>
-            <div class="flex gap-2 overflow-x-auto pb-1">
-              {sec.pages.map((page, i) => (
-                <img
-                  src={`/imgs/paginas-internas/${page}`}
-                  alt={`Página interna — ${sec.title} ${i + 1}`}
-                  width="80" height="110"
-                  loading="lazy"
-                  class="gallery-img flex-shrink-0 w-16 h-auto rounded-lg border border-gray-200 cursor-zoom-in hover:border-accent transition-colors"
-                />
-              ))}
-            </div>
-          </div>
-        </div>
+    <!-- Tabs de seção -->
+    <div class="flex flex-col sm:flex-row gap-4 mb-10 justify-center" id="book-tabs">
+      {sections.map((sec, i) => (
+        <button
+          data-section={sec.id}
+          class={`book-tab flex-1 sm:max-w-[220px] text-left p-5 rounded-2xl border-2 transition-all duration-300 ${i === 0 ? 'border-accent bg-white shadow-md' : 'border-gray-200 bg-white/60 hover:border-accent/50'}`}
+          style={i === 0 ? `border-color: ${sec.color}` : ''}
+        >
+          <span class="text-xs font-bold tracking-widest uppercase block mb-1" style={`color: ${sec.color}`}>Parte {sec.num}</span>
+          <span class="font-heading font-extrabold text-lg text-brand-ink block mb-1">{sec.title}</span>
+          <span class="text-xs text-gray-400 leading-snug">{sec.description}</span>
+        </button>
       ))}
+    </div>
+
+    <!-- Swiper de páginas — atualizado por JS ao clicar nas tabs -->
+    <div class="relative">
+      <div class="swiper book-pages-swiper">
+        <div class="swiper-wrapper" id="book-pages-wrapper">
+          {/* Carrega Fundamentos por padrão */}
+          {sections[0].pages.map((page, i) => (
+            <div class="swiper-slide" style="width: 240px;">
+              <img
+                src={`/imgs/paginas-internas/${page}`}
+                alt={`Página de Fundamentos ${i + 1}`}
+                width="240" height="330"
+                loading="lazy"
+                class="gallery-img w-full h-auto rounded-2xl cursor-zoom-in border border-gray-100"
+                data-section="fund"
+              />
+            </div>
+          ))}
+        </div>
+        <div class="swiper-pagination mt-6"></div>
+      </div>
     </div>
 
   </div>
 </section>
+
+<script is:inline>
+  // Dados das seções para o JS
+  const bookData = {
+    fund: {
+      color: '#E8572A',
+      pages: ['365sb-fund-01.avif','365sb-fund-02.avif','365sb-fund-03.avif','365sb-fund-04.avif','365sb-fund-05.avif'],
+      alts: ['Fundamentos','Fundamentos','Fundamentos','Fundamentos','Fundamentos'],
+    },
+    plan: {
+      color: '#C44820',
+      pages: ['365sb-plan-01.avif','365sb-plan-02.avif','365sb-plan-03.avif','365sb-plan-04.avif','365sb-plan-05.avif'],
+      alts: ['Planejamento','Planejamento','Planejamento','Planejamento','Planejamento'],
+    },
+    exec: {
+      color: '#F4956A',
+      pages: ['365sb-exec-01.avif','365sb-exec-02.avif','365sb-exec-03.avif','365sb-exec-04.avif','365sb-exec-05.avif'],
+      alts: ['Execução','Execução','Execução','Execução','Execução'],
+    },
+  };
+
+  function initBookSwiper() {
+    if (typeof Swiper === 'undefined') { setTimeout(initBookSwiper, 200); return; }
+
+    const swiper = new Swiper('.book-pages-swiper', {
+      slidesPerView: 'auto',
+      spaceBetween: 16,
+      centeredSlides: false,
+      loop: false,
+      grabCursor: true,
+      autoplay: { delay: 3000, disableOnInteraction: true },
+      speed: 500,
+      pagination: { el: '.book-pages-swiper .swiper-pagination', clickable: true },
+    });
+
+    // Tabs
+    document.querySelectorAll('.book-tab').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const sec = btn.dataset.section;
+        const data = bookData[sec];
+
+        // Atualiza estilos das tabs
+        document.querySelectorAll('.book-tab').forEach(b => {
+          b.style.borderColor = '';
+          b.classList.remove('shadow-md');
+          b.classList.add('border-gray-200');
+          b.classList.remove('border-accent');
+        });
+        btn.style.borderColor = data.color;
+        btn.classList.remove('border-gray-200');
+        btn.classList.add('shadow-md');
+
+        // Atualiza slides
+        swiper.removeAllSlides();
+        const slides = data.pages.map((page, i) => `
+          <div class="swiper-slide" style="width:240px">
+            <img src="/imgs/paginas-internas/${page}"
+                 alt="Página de ${data.alts[i]} ${i + 1}"
+                 width="240" height="330" loading="lazy"
+                 class="gallery-img w-full h-auto rounded-2xl cursor-zoom-in border border-gray-100" />
+          </div>`);
+        swiper.appendSlide(slides);
+        swiper.slideTo(0, 0);
+
+        // Reatribui lightbox aos novos elementos
+        document.querySelectorAll('.gallery-img').forEach(img => {
+          img.onclick = () => {
+            const lb = document.getElementById('lightbox');
+            const lbImg = document.getElementById('lb-img');
+            if (lb && lbImg) {
+              lbImg.src = img.src;
+              lbImg.alt = img.alt;
+              lb.classList.add('show');
+              document.body.style.overflow = 'hidden';
+            }
+          };
+        });
+      });
+    });
+  }
+
+  window.addEventListener('load', initBookSwiper);
+</script>

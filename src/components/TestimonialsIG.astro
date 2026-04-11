@@ -4,29 +4,51 @@ const igDepos = [
   "Depoimento_365_DB_4.jpeg","Depoimento_365_DB_5.jpeg","Depoimento_365_DB_6.jpeg",
 ];
 ---
-<section class="bg-surface-warm py-20" aria-label="Depoimentos de clientes">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+<section class="bg-surface-warm py-20 overflow-hidden" aria-label="Depoimentos de clientes">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center mb-12">
+    <span class="badge bg-accent-light text-accent mb-3 w-fit mx-auto">Resultados reais</span>
+    <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-brand-ink gsap-reveal">
+      Olha os resultados de quem já está aplicando
+    </h2>
+  </div>
 
-    <div class="text-center mb-12">
-      <span class="badge bg-accent-light text-accent mb-3 w-fit mx-auto">Resultados reais</span>
-      <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-brand-ink gsap-reveal">
-        Olha os resultados de quem já está aplicando
-      </h2>
-    </div>
-
-    <div class="gsap-stagger-group grid grid-cols-2 md:grid-cols-3 gap-4">
-      {igDepos.map((dep) => (
-        <div class="gsap-stagger-item">
+  <!-- Swiper com efeito cards (pilha 3D) -->
+  <div class="swiper depo-swiper max-w-5xl mx-auto px-4">
+    <div class="swiper-wrapper pb-10">
+      {igDepos.map((dep, i) => (
+        <div class="swiper-slide rounded-2xl overflow-hidden" style="width: min(340px, 90vw);">
           <img
             src={`/imgs/depoimentos/${dep}`}
-            alt="Depoimento de cliente — 365 Dias de Branding"
-            width="400" height="600"
+            alt={`Depoimento de cliente ${i + 1} — 365 Dias de Branding`}
+            width="340" height="500"
             loading="lazy"
-            class="gallery-img w-full h-auto rounded-2xl cursor-zoom-in hover:scale-[1.02] transition-transform duration-300"
+            class="gallery-img w-full h-auto cursor-zoom-in"
           />
         </div>
       ))}
     </div>
-
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
   </div>
 </section>
+
+<script is:inline>
+  function initDepoSwiper() {
+    if (typeof Swiper === 'undefined') { setTimeout(initDepoSwiper, 200); return; }
+    new Swiper('.depo-swiper', {
+      effect: 'cards',
+      grabCursor: true,
+      loop: true,
+      autoplay: { delay: 3500, disableOnInteraction: false, pauseOnMouseEnter: true },
+      speed: 600,
+      cardsEffect: { perSlideOffset: 10, perSlideRotate: 3, rotate: true, slideShadows: false },
+      pagination: { el: '.depo-swiper .swiper-pagination', clickable: true },
+      navigation: {
+        nextEl: '.depo-swiper .swiper-button-next',
+        prevEl: '.depo-swiper .swiper-button-prev',
+      },
+    });
+  }
+  window.addEventListener('load', initDepoSwiper);
+</script>

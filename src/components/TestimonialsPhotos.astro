@@ -1,38 +1,68 @@
 ---
-const clientPhotos = [
-  "Depoimento_365_Foto1000-768x1149.webp","Depoimento_365_Foto1001.webp","Depoimento_365_Foto1002.webp",
-  "Depoimento_365_Foto1003.webp","Depoimento_365_Foto1004.webp","Depoimento_365_Foto1008.webp",
-  "Depoimento_365_Foto1010-768x954.webp","Depoimento_365_Foto1013-768x1118.webp",
-  "Depoimento_365_Foto1014-768x1058.webp","Depoimento_365_Foto1014b-768x1058.webp",
-  "Depoimento_365_Foto1015-768x944.webp","Depoimento_365_Foto1017-768x1290.webp",
-  "Depoimento_365_Foto1018-768x1072.webp","Depoimento_365_Foto1019-768x1247.webp",
+const row1 = [
+  "Depoimento_365_Foto1000-768x1149.webp",
+  "Depoimento_365_Foto1001.webp",
+  "Depoimento_365_Foto1002.webp",
+  "Depoimento_365_Foto1003.webp",
+  "Depoimento_365_Foto1004.webp",
+  "Depoimento_365_Foto1008.webp",
+  "Depoimento_365_Foto1010-768x954.webp",
+  "Depoimento_365_Foto1013-768x1118.webp",
+  "Depoimento_365_Foto1014-768x1058.webp",
+  "cliente_stories_1.webp",
+];
+const row2 = [
+  "Depoimento_365_Foto1014b-768x1058.webp",
+  "Depoimento_365_Foto1015-768x944.webp",
+  "Depoimento_365_Foto1017-768x1290.webp",
+  "Depoimento_365_Foto1018-768x1072.webp",
+  "Depoimento_365_Foto1019-768x1247.webp",
   "Depoimento_365_Foto1020-768x1201.webp",
-  "cliente_stories_1.webp","cliente_stories_2.webp","cliente_stories_3.webp","cliente_stories_4.webp",
+  "cliente_stories_2.webp",
+  "cliente_stories_3.webp",
+  "cliente_stories_4.webp",
 ];
 ---
-<section class="bg-white py-20" aria-label="Fotos de clientes com o livro">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+<section class="bg-white py-20 overflow-hidden" aria-label="Fotos de clientes com o livro">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center mb-12">
+    <span class="badge bg-accent-light text-accent mb-3 w-fit mx-auto">Prova social real</span>
+    <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-brand-ink gsap-reveal">
+      Elas compraram e amaram 😍
+    </h2>
+  </div>
 
-    <div class="text-center mb-12">
-      <span class="badge bg-accent-light text-accent mb-3 w-fit mx-auto">Prova social real</span>
-      <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-brand-ink gsap-reveal">
-        Elas compraram e amaram 😍
-      </h2>
-    </div>
-
-    <div class="gsap-stagger-group columns-2 sm:columns-3 md:columns-4 gap-3 space-y-3">
-      {clientPhotos.map((photo) => (
-        <div class="gsap-stagger-item break-inside-avoid">
+  <!-- Marquee linha 1: esquerda → direita (aparência de rolar para a esquerda) -->
+  <div class="marquee-wrapper mb-3">
+    <div class="marquee-track left">
+      {/* Duplicado para loop infinito perfeito */}
+      {[...row1, ...row1].map((photo, i) => (
+        <div class="flex-shrink-0 w-40 sm:w-48 rounded-xl overflow-hidden">
           <img
             src={`/imgs/clientes/${photo}`}
             alt="Cliente com o livro 365 Dias de Branding"
-            width="300" height="400"
+            width="200" height="280"
             loading="lazy"
-            class="gallery-img w-full h-auto rounded-xl cursor-zoom-in hover:scale-[1.02] transition-transform duration-300"
+            class="gallery-img w-full h-52 sm:h-64 object-cover cursor-zoom-in hover:scale-105 transition-transform duration-500"
           />
         </div>
       ))}
     </div>
+  </div>
 
+  <!-- Marquee linha 2: direita → esquerda (direção oposta) -->
+  <div class="marquee-wrapper">
+    <div class="marquee-track right">
+      {[...row2, ...row2].map((photo, i) => (
+        <div class="flex-shrink-0 w-40 sm:w-48 rounded-xl overflow-hidden">
+          <img
+            src={`/imgs/clientes/${photo}`}
+            alt="Cliente com o livro 365 Dias de Branding"
+            width="200" height="280"
+            loading="lazy"
+            class="gallery-img w-full h-52 sm:h-64 object-cover cursor-zoom-in hover:scale-105 transition-transform duration-500"
+          />
+        </div>
+      ))}
+    </div>
   </div>
 </section>
