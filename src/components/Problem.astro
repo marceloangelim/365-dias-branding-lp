@@ -1,43 +1,61 @@
 ---
 ---
-<section class="bg-surface-warm py-20" aria-label="Para quem é o 365 Dias de Branding">
+<section class="bg-surface-warm py-24" aria-label="Para quem é o 365 Dias de Branding">
   <div class="max-w-6xl mx-auto px-4 sm:px-6">
 
     <div class="text-center mb-4">
-      <span class="badge bg-accent-light text-accent">Este guia é para você que…</span>
+      <div class="chapter-badge justify-center mb-4">Para quem é</div>
+      <h2 class="font-heading text-3xl sm:text-4xl font-bold text-ink gsap-reveal">
+        Você já se sentiu perdida ao tentar<br class="hidden sm:block" /> criar a sua marca?
+      </h2>
     </div>
-    <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-brand-ink text-center mb-4 gsap-reveal">
-      Você já se sentiu perdida ao criar a sua marca?
-    </h2>
-    <span class="ink-divider block mx-auto mb-14" style="max-width:100px"></span>
+    <span class="ink-divider block mx-auto mb-14" style="max-width:80px"></span>
 
-    <div class="gsap-stagger-group grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-
+    <div class="gsap-stagger-group grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-16">
       {[
-        { icon: 'M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253', title: 'Empreendedora em início', desc: 'Está criando uma marca e não sabe por onde começar. Precisa de direção e um caminho claro.' },
-        { icon: 'M13 10V3L4 14h7v7l9-11h-7z', title: 'Prestadora de serviços', desc: 'Já tem uma marca mas está desmotivada e precisa de novas estratégias para alavancar posicionamento e vendas.' },
-        { icon: 'M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z', title: 'Infoprodutora', desc: 'Profissional de marketing ou social media que quer mais ideias para apresentar a clientes e marcas.' },
-        { icon: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z', title: 'Consultora / Mentora', desc: 'Presta consultoria de branding e marketing e precisa de novas ideias e ações para sugerir a clientes.' },
+        {
+          icon: 'M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253',
+          title: 'Empreendedora em início',
+          desc: 'Está criando uma marca e não sabe por onde começar. Precisa de direção e um caminho claro.'
+        },
+        {
+          icon: 'M13 10V3L4 14h7v7l9-11h-7z',
+          title: 'Prestadora de serviços',
+          desc: 'Já tem uma marca mas está desmotivada e precisa de novas estratégias para alavancar posicionamento.'
+        },
+        {
+          icon: 'M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z',
+          title: 'Infoprodutora',
+          desc: 'Profissional de marketing que quer mais ideias para apresentar a clientes e marcas.'
+        },
+        {
+          icon: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z',
+          title: 'Consultora / Mentora',
+          desc: 'Presta consultoria de branding e precisa de novas ideias e ações para sugerir a clientes.'
+        },
       ].map((card) => (
-        <div class="gsap-stagger-item bg-white rounded-2xl p-6 border border-gray-100 hover:border-accent/30 hover:shadow-md transition-all duration-300">
-          <div class="w-10 h-10 rounded-xl bg-accent-light flex items-center justify-center mb-4">
-            <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={card.icon}/></svg>
+        <div class="gsap-stagger-item bg-white rounded-2xl p-6 border border-surface-cream card-hover cursor-default">
+          <div class="w-10 h-10 rounded-xl bg-accent-light flex items-center justify-center mb-4 flex-shrink-0">
+            <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d={card.icon}/>
+            </svg>
           </div>
-          <h3 class="font-heading font-bold text-brand-ink mb-2">{card.title}</h3>
-          <p class="text-sm text-gray-500 leading-relaxed">{card.desc}</p>
+          <h3 class="font-heading font-bold text-ink mb-2 text-lg">{card.title}</h3>
+          <p class="text-sm text-ink-faint leading-relaxed">{card.desc}</p>
         </div>
       ))}
-
     </div>
 
-    <!-- Ponte emocional -->
-    <div class="max-w-2xl mx-auto text-center gsap-reveal">
-      <p class="text-lg text-gray-600 leading-relaxed italic">
-        "Quando decidi empreender e criar a minha marca eu tinha muitas ideias, muita informação,
-        mas ao mesmo tempo sentia muita <strong class="text-brand-ink not-italic">solidão</strong> e
-        falta de uma direção…"
-      </p>
-      <p class="mt-4 text-sm text-accent font-semibold">— Ellen, fundadora da Branding Lab</p>
+    <!-- Ponte emocional — pull quote editorial -->
+    <div class="max-w-2xl mx-auto gsap-reveal">
+      <blockquote class="pull-quote">
+        <p class="font-heading text-xl sm:text-2xl text-ink leading-relaxed mb-4">
+          "Quando decidi empreender e criar a minha marca eu tinha muitas ideias, muita informação,
+          mas ao mesmo tempo sentia muita <strong class="not-italic font-bold">solidão</strong> e
+          falta de uma direção…"
+        </p>
+        <cite class="not-italic text-sm text-accent font-semibold">— Ellen, fundadora da Branding Lab</cite>
+      </blockquote>
     </div>
 
   </div>

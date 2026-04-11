@@ -2,95 +2,103 @@
 ---
 <section id="hero" class="bg-surface-warm overflow-hidden" aria-label="Apresentação do produto">
   <div class="max-w-6xl mx-auto px-4 sm:px-6">
-    <div class="grid md:grid-cols-[1fr_1.05fr] gap-8 items-end min-h-[88vh] md:min-h-0">
+    <div class="grid md:grid-cols-[1fr_1fr] gap-8 items-end min-h-[90vh] md:min-h-0">
 
-      <!-- Copy (alinhado ao centro verticalmente) -->
+      <!-- Copy -->
       <div class="py-16 md:py-24 flex flex-col justify-center">
-        <div class="badge bg-accent-light text-accent mb-6 w-fit">
-          <span>✦</span> Guia Prático · 365 Exercícios de Branding
-        </div>
+        <!-- Chapter label -->
+        <div class="chapter-badge mb-6">Guia Prático · 365 Exercícios de Branding</div>
 
-        <h1 class="font-heading text-4xl sm:text-5xl xl:text-6xl font-extrabold text-brand-ink leading-tight mb-6">
-          Você tem o sonho de construir uma
-          <span class="text-gradient"> marca apaixonante?</span>
+        <h1 class="font-heading text-4xl sm:text-5xl xl:text-6xl font-bold text-ink leading-[1.15] mb-6">
+          Construa uma
+          <em class="text-gradient not-italic">marca apaixonante</em>
+          — exercício por exercício.
         </h1>
 
-        <p class="text-lg text-gray-500 mb-8 leading-relaxed">
-          Aprenda a posicionar a sua marca digital com
-          <strong class="text-brand-ink">365 exercícios práticos</strong> — um para cada dia do ano.
-          Criado por Ellen, fundadora da Branding Lab.
+        <p class="text-lg text-ink-faint mb-8 leading-relaxed max-w-md">
+          O Guia Prático com <strong class="text-ink font-semibold">365 exercícios de branding</strong> criado
+          por Ellen, fundadora da Branding Lab — para empreendedoras que querem se posicionar e crescer.
         </p>
 
+        <!-- Stars + social proof -->
+        <div class="flex items-center gap-3 mb-8">
+          <span class="stars text-lg">★★★★★</span>
+          <span class="text-sm text-ink-faint">
+            <strong class="text-ink">+50.000</strong> alunas · 7 dígitos em vendas
+          </span>
+        </div>
+
         <!-- Stats -->
-        <div class="flex flex-wrap gap-6 mb-8">
-          <div class="text-center">
-            <p class="font-heading font-extrabold text-2xl text-accent">
+        <div class="flex flex-wrap gap-6 mb-10 py-5 border-y border-surface-cream">
+          <div>
+            <p class="font-heading font-bold text-2xl text-accent leading-none">
               <span class="count-up" data-target="50000">50.000</span>+
             </p>
-            <p class="text-xs text-gray-400 uppercase tracking-widest mt-1">Clientes</p>
+            <p class="text-xs text-ink-faint uppercase tracking-widest mt-1.5">Clientes</p>
           </div>
-          <div class="w-px bg-gray-200 self-stretch"></div>
-          <div class="text-center">
-            <p class="font-heading font-extrabold text-2xl text-accent">
+          <div class="w-px bg-surface-cream self-stretch"></div>
+          <div>
+            <p class="font-heading font-bold text-2xl text-accent leading-none">
               <span class="count-up" data-target="340000">340.000</span>+
             </p>
-            <p class="text-xs text-gray-400 uppercase tracking-widest mt-1">Seguidores</p>
+            <p class="text-xs text-ink-faint uppercase tracking-widest mt-1.5">Seguidores</p>
           </div>
-          <div class="w-px bg-gray-200 self-stretch"></div>
-          <div class="text-center">
-            <p class="font-heading font-extrabold text-2xl text-accent">7 Dígitos</p>
-            <p class="text-xs text-gray-400 uppercase tracking-widest mt-1">Faturamento</p>
+          <div class="w-px bg-surface-cream self-stretch"></div>
+          <div>
+            <p class="font-heading font-bold text-2xl text-accent leading-none">7 Dígitos</p>
+            <p class="text-xs text-ink-faint uppercase tracking-widest mt-1.5">Faturamento</p>
           </div>
         </div>
 
-        <a
-          href="#pricing"
-          class="btn-shimmer inline-flex items-center gap-2 bg-accent text-white font-heading font-bold text-lg px-8 py-4 rounded-full w-fit shadow-lg shadow-accent/25 hover:bg-accent-dark transition-all duration-300"
-        >
-          Quero ter uma marca encantadora!
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
+        <div class="flex flex-col sm:flex-row items-start gap-4">
+          <a
+            href="#pricing"
+            class="btn-shimmer inline-flex items-center gap-2.5 bg-accent text-white font-semibold text-base px-8 py-4 rounded-full shadow-lg shadow-accent/25 hover:bg-accent-dark transition-all duration-300 cursor-pointer"
+          >
+            Quero ter uma marca encantadora!
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
 
-        <p class="text-sm text-gray-400 mt-4">
-          Versão Digital a partir de <strong class="text-brand-ink">3x R$87,31</strong> · Acesso imediato
+        <p class="text-xs text-ink-faint mt-4">
+          Versão Digital a partir de <strong class="text-ink">3x R$87,31</strong> · Acesso imediato
         </p>
       </div>
 
-      <!-- Imagem hero — ocupa toda a altura da coluna, alinhada à base -->
+      <!-- Imagem hero desktop -->
       <div class="hidden md:flex items-end justify-center relative h-full">
-        <!-- Glow de fundo -->
-        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-accent/12 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[420px] h-[420px] bg-accent/10 rounded-full blur-3xl pointer-events-none"></div>
         <div id="hero-book" class="float-anim relative w-full">
           <img
             src="/imgs/spiral_mockup_365_DB-1.gif"
             alt="Livro 365 Dias de Branding — Guia Prático com 365 exercícios de branding"
-            width="600"
-            height="680"
+            width="580"
+            height="660"
             loading="eager"
             fetchpriority="high"
-            class="relative w-full h-auto object-contain max-h-[85vh]"
+            class="relative w-full h-auto object-contain max-h-[88vh]"
           />
         </div>
       </div>
 
-      <!-- Imagem mobile: centralizada, menor -->
+      <!-- Imagem mobile -->
       <div class="flex md:hidden justify-center pb-8">
         <img
           src="/imgs/spiral_mockup_365_DB-1.gif"
           alt="Livro 365 Dias de Branding"
-          width="300" height="340"
+          width="280" height="320"
           loading="eager"
-          class="w-64 h-auto"
+          class="w-60 h-auto"
         />
       </div>
 
     </div>
   </div>
 
-  <!-- Onda decorativa -->
-  <div class="relative h-10 overflow-hidden">
+  <!-- Divider ondulado -->
+  <div class="relative h-10 overflow-hidden -mb-px">
     <svg viewBox="0 0 1440 40" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" class="absolute bottom-0 w-full h-full">
-      <path d="M0 20C240 40 480 0 720 20C960 40 1200 0 1440 20V40H0V20Z" fill="white"/>
+      <path d="M0 20C240 40 480 0 720 20C960 40 1200 0 1440 20V40H0V20Z" fill="#ffffff"/>
     </svg>
   </div>
 </section>

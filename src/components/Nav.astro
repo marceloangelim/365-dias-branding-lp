@@ -1,11 +1,14 @@
 ---
 ---
-<header id="nav" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 transition-shadow duration-300">
+<header id="nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
     <a href="/" aria-label="Branding Lab — Página inicial">
-      <img src="/imgs/logo-branding-lab.svg" alt="Branding Lab" width="140" height="40" class="h-9 w-auto" />
+      <img src="/imgs/logo-branding-lab.svg" alt="Branding Lab" width="140" height="40" class="h-8 w-auto" />
     </a>
-    <a href="#pricing" class="btn-shimmer bg-accent text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-accent-dark transition-colors duration-300 shadow-sm">
+    <a
+      href="#pricing"
+      class="btn-shimmer bg-accent text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-accent-dark transition-colors duration-300 shadow-sm cursor-pointer"
+    >
       Quero o 365DB
     </a>
   </div>
@@ -13,8 +16,21 @@
 <div class="h-16"></div>
 
 <script>
+  const nav = document.getElementById('nav');
+  let ticking = false;
   window.addEventListener('scroll', () => {
-    const nav = document.getElementById('nav');
-    if (nav) nav.classList.toggle('shadow-md', window.scrollY > 20);
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        if (nav) {
+          if (window.scrollY > 20) {
+            nav.classList.add('bg-surface-warm/95', 'backdrop-blur-sm', 'border-b', 'border-surface-cream', 'shadow-sm');
+          } else {
+            nav.classList.remove('bg-surface-warm/95', 'backdrop-blur-sm', 'border-b', 'border-surface-cream', 'shadow-sm');
+          }
+        }
+        ticking = false;
+      });
+      ticking = true;
+    }
   });
 </script>

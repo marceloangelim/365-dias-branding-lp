@@ -23,19 +23,23 @@ const row2 = [
   "cliente_stories_4.webp",
 ];
 ---
-<section class="bg-white py-20 overflow-hidden" aria-label="Fotos de clientes com o livro">
+<section class="bg-white py-24 overflow-hidden" aria-label="Fotos de clientes com o livro">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center mb-12">
-    <span class="badge bg-accent-light text-accent mb-3 w-fit mx-auto">Prova social real</span>
-    <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-brand-ink gsap-reveal">
-      Elas compraram e amaram 😍
+    <div class="chapter-badge justify-center mb-4">Prova social real</div>
+    <h2 class="font-heading text-3xl sm:text-4xl font-bold text-ink gsap-reveal">
+      Elas compraram e adoraram
     </h2>
+    <!-- Star aggregate -->
+    <div class="flex items-center justify-center gap-2 mt-4">
+      <span class="stars text-xl">★★★★★</span>
+      <span class="text-sm text-ink-faint">+50.000 clientes satisfeitas</span>
+    </div>
   </div>
 
-  <!-- Marquee linha 1: esquerda → direita (aparência de rolar para a esquerda) -->
+  <!-- Marquee linha 1 -->
   <div class="marquee-wrapper mb-3">
     <div class="marquee-track left">
-      {/* Duplicado para loop infinito perfeito */}
-      {[...row1, ...row1].map((photo, i) => (
+      {[...row1, ...row1].map((photo) => (
         <div class="flex-shrink-0 w-40 sm:w-48 rounded-xl overflow-hidden">
           <img
             src={`/imgs/clientes/${photo}`}
@@ -49,10 +53,10 @@ const row2 = [
     </div>
   </div>
 
-  <!-- Marquee linha 2: direita → esquerda (direção oposta) -->
+  <!-- Marquee linha 2 -->
   <div class="marquee-wrapper">
     <div class="marquee-track right">
-      {[...row2, ...row2].map((photo, i) => (
+      {[...row2, ...row2].map((photo) => (
         <div class="flex-shrink-0 w-40 sm:w-48 rounded-xl overflow-hidden">
           <img
             src={`/imgs/clientes/${photo}`}

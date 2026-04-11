@@ -5,26 +5,26 @@ const pages = [
   "365sb-exec-01.avif","365sb-exec-02.avif","365sb-exec-03.avif","365sb-exec-04.avif","365sb-exec-05.avif",
 ];
 ---
-<section class="bg-white py-20 overflow-hidden" aria-label="Páginas do livro 365 Dias de Branding">
+<section class="bg-white py-24 overflow-hidden" aria-label="Páginas do livro 365 Dias de Branding">
   <div class="max-w-6xl mx-auto px-4 sm:px-6">
     <div class="text-center mb-12">
-      <span class="badge bg-accent-light text-accent mb-3 w-fit mx-auto">Conteúdo real</span>
-      <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-brand-ink gsap-reveal">
+      <div class="chapter-badge justify-center mb-4">Conteúdo real</div>
+      <h2 class="font-heading text-3xl sm:text-4xl font-bold text-ink gsap-reveal">
         Veja por dentro
       </h2>
-      <p class="text-gray-400 mt-3 text-sm">Clique em qualquer página para ampliar.</p>
+      <p class="text-ink-faint mt-3 text-sm">Clique em qualquer página para ampliar.</p>
     </div>
   </div>
 
-  <!-- Swiper full-bleed com efeito 3D coverflow -->
+  <!-- Swiper 3D Coverflow full-bleed -->
   <div class="swiper gallery-swiper px-4">
     <div class="swiper-wrapper py-6">
       {pages.map((page, i) => (
-        <div class="swiper-slide rounded-2xl overflow-hidden" style="width:220px">
+        <div class="swiper-slide rounded-2xl overflow-hidden" style="width:210px">
           <img
             src={`/imgs/paginas-internas/${page}`}
             alt={`Página interna do livro 365 Dias de Branding — ${i + 1}`}
-            width="220" height="300"
+            width="210" height="290"
             loading="lazy"
             class="gallery-img w-full h-auto cursor-zoom-in"
           />
@@ -47,9 +47,9 @@ const pages = [
       autoplay: { delay: 2800, disableOnInteraction: false, pauseOnMouseEnter: true },
       speed: 700,
       coverflowEffect: {
-        rotate: 20,
-        stretch: 10,
-        depth: 120,
+        rotate: 22,
+        stretch: 8,
+        depth: 110,
         modifier: 1,
         slideShadows: false,
       },

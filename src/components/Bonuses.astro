@@ -1,73 +1,83 @@
 ---
 ---
-<section class="bg-white py-20" aria-label="Bônus inclusos">
+<section class="bg-white py-24" aria-label="Bônus inclusos">
   <div class="max-w-5xl mx-auto px-4 sm:px-6">
 
     <div class="text-center mb-12">
-      <span class="badge bg-accent-light text-accent mb-3 w-fit mx-auto">Só para quem comprar agora</span>
-      <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-brand-ink gsap-reveal">
-        Olha só os bônus especiais que preparei!
+      <div class="chapter-badge justify-center mb-4">Só para quem comprar agora</div>
+      <h2 class="font-heading text-3xl sm:text-4xl font-bold text-ink gsap-reveal">
+        Olha só os bônus especiais!
       </h2>
-      <span class="ink-divider block mx-auto mt-4" style="max-width:100px"></span>
+      <span class="ink-divider block mx-auto mt-5" style="max-width:80px"></span>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-8">
+    <div class="grid md:grid-cols-2 gap-6">
 
       <!-- Bônus 1 -->
-      <div class="gsap-reveal-left bg-surface-warm rounded-2xl overflow-hidden border border-gray-100 flex flex-col">
-        <!-- Mockup sem shadow (fundo provavelmente branco/transparente) -->
+      <div class="gsap-reveal-left bg-surface-warm rounded-2xl overflow-hidden border border-surface-cream card-hover flex flex-col">
         <img
           src="/imgs/paginas-internas/mockup-365-branding-bonus-365-making-planilha.avif"
           alt="Planilha 365 Making — Bônus incluso"
           width="500" height="280"
           loading="lazy"
-          class="w-full h-48 object-contain bg-surface-card"
+          class="w-full h-52 object-contain bg-surface-card"
         />
         <div class="p-6 flex-1 flex flex-col">
-          <span class="badge bg-accent-light text-accent w-fit mb-3">Bônus 01</span>
-          <h3 class="font-heading font-extrabold text-xl text-brand-ink mb-2">Planilha 365 Making</h3>
-          <p class="text-sm text-gray-500 leading-relaxed flex-1">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="badge bg-accent text-white">Bônus 01</span>
+            <span class="text-gray-400 text-sm line-through">R$197</span>
+            <span class="text-accent text-sm font-semibold">Incluso grátis</span>
+          </div>
+          <h3 class="font-heading font-bold text-xl text-ink mb-2">Planilha 365 Making</h3>
+          <p class="text-sm text-ink-faint leading-relaxed flex-1">
             Planilha no Google Drive com o compilado de todos os 365 exercícios em calendário organizado.
             Marque e visualize ao longo do ano quais ações já colocou em prática.
           </p>
-          <div class="mt-5 flex items-center gap-3">
-            <span class="text-gray-400 text-sm line-through">R$197</span>
-            <span class="badge bg-accent-light text-accent">Incluso gratuitamente</span>
-          </div>
         </div>
       </div>
 
       <!-- Bônus 2 -->
-      <div class="gsap-reveal-right bg-surface-warm rounded-2xl overflow-hidden border border-gray-100 flex flex-col">
-        <div class="w-full h-48 bg-brand-navy flex items-center justify-center">
+      <div class="gsap-reveal-right bg-surface-warm rounded-2xl overflow-hidden border border-surface-cream card-hover flex flex-col">
+        <div class="w-full h-52 bg-ink flex items-center justify-center">
           <div class="text-center text-white">
             <div class="w-16 h-16 rounded-full bg-accent/20 border-2 border-accent flex items-center justify-center mx-auto mb-3">
-              <svg class="w-7 h-7 text-accent ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              <svg class="w-7 h-7 text-accent ml-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
             </div>
-            <p class="font-heading font-bold text-lg">MasterClass</p>
-            <p class="text-accent text-sm">3 horas de conteúdo</p>
+            <p class="font-heading font-bold text-xl">MasterClass</p>
+            <p class="text-accent text-sm mt-1">3 horas de conteúdo</p>
           </div>
         </div>
         <div class="p-6 flex-1 flex flex-col">
-          <span class="badge bg-accent-light text-accent w-fit mb-3">Bônus 02</span>
-          <h3 class="font-heading font-extrabold text-xl text-brand-ink mb-2">MasterClass de Planejamento Estratégico</h3>
-          <p class="text-sm text-gray-500 leading-relaxed flex-1">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="badge bg-accent text-white">Bônus 02</span>
+            <span class="text-gray-400 text-sm line-through">R$197</span>
+            <span class="text-accent text-sm font-semibold">Incluso grátis</span>
+          </div>
+          <h3 class="font-heading font-bold text-xl text-ink mb-2">MasterClass de Planejamento Estratégico</h3>
+          <p class="text-sm text-ink-faint leading-relaxed flex-1">
             3 horas gravadas na área de membros. O que considerar em branding na hora de planejar?
             Quais os primeiros passos? Como fazer na prática?
           </p>
-          <div class="mt-5 flex items-center gap-3">
-            <span class="text-gray-400 text-sm line-through">R$197</span>
-            <span class="badge bg-accent-light text-accent">Incluso gratuitamente</span>
-          </div>
         </div>
       </div>
 
     </div>
 
-    <div class="text-center mt-12 gsap-reveal">
-      <a href="#pricing" class="btn-shimmer inline-flex items-center gap-2 bg-accent text-white font-heading font-bold px-8 py-4 rounded-full hover:bg-accent-dark transition-colors duration-300">
+    <!-- Valor total dos bônus -->
+    <div class="mt-8 text-center p-6 rounded-2xl bg-accent-light border border-accent-muted gsap-reveal">
+      <p class="text-ink-muted text-sm mb-1">Valor total dos bônus</p>
+      <p class="font-heading font-bold text-3xl text-ink">
+        <span class="line-through text-ink-faint font-normal text-xl mr-2">R$394</span>
+        <span class="text-accent">Incluso gratuitamente</span>
+      </p>
+    </div>
+
+    <div class="text-center mt-8 gsap-reveal">
+      <a href="#pricing" class="btn-shimmer inline-flex items-center gap-2 bg-accent text-white font-semibold px-8 py-4 rounded-full hover:bg-accent-dark transition-colors duration-300 cursor-pointer shadow-md shadow-accent/20">
         Quero o 365DB com todos os bônus!
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
     </div>
 

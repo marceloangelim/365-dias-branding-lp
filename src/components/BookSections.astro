@@ -23,45 +23,45 @@ const sections = [
   },
 ];
 ---
-<section class="bg-surface-warm py-20 overflow-hidden" aria-label="As 3 partes do livro">
+<section class="bg-surface-warm py-24 overflow-hidden" aria-label="As 3 partes do livro">
   <div class="max-w-6xl mx-auto px-4 sm:px-6">
 
     <div class="text-center mb-4">
-      <span class="badge bg-accent-light text-accent">Como o 365DB é por dentro</span>
+      <div class="chapter-badge justify-center mb-4">Como é por dentro</div>
     </div>
-    <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-brand-ink text-center mb-4 gsap-reveal">
+    <h2 class="font-heading text-3xl sm:text-4xl font-bold text-ink text-center mb-3 gsap-reveal">
       Material 100% prático em 3 partes
     </h2>
-    <span class="ink-divider block mx-auto mb-12" style="max-width:100px"></span>
+    <span class="ink-divider block mx-auto mb-12" style="max-width:80px"></span>
 
-    <!-- Tabs de seção -->
+    <!-- Tabs -->
     <div class="flex flex-col sm:flex-row gap-4 mb-10 justify-center" id="book-tabs">
       {sections.map((sec, i) => (
         <button
           data-section={sec.id}
-          class={`book-tab flex-1 sm:max-w-[220px] text-left p-5 rounded-2xl border-2 transition-all duration-300 ${i === 0 ? 'border-accent bg-white shadow-md' : 'border-gray-200 bg-white/60 hover:border-accent/50'}`}
+          class={`book-tab flex-1 sm:max-w-[220px] text-left p-5 rounded-2xl border-2 transition-all duration-300 cursor-pointer ${i === 0 ? 'bg-white shadow-md' : 'border-surface-cream bg-white/60 hover:border-accent/40'}`}
           style={i === 0 ? `border-color: ${sec.color}` : ''}
+          aria-pressed={i === 0 ? 'true' : 'false'}
         >
-          <span class="text-xs font-bold tracking-widest uppercase block mb-1" style={`color: ${sec.color}`}>Parte {sec.num}</span>
-          <span class="font-heading font-extrabold text-lg text-brand-ink block mb-1">{sec.title}</span>
-          <span class="text-xs text-gray-400 leading-snug">{sec.description}</span>
+          <span class="text-xs font-bold tracking-widest uppercase block mb-1" style={`color: ${sec.color}; font-family: 'Inter', sans-serif;`}>Parte {sec.num}</span>
+          <span class="font-heading font-bold text-lg text-ink block mb-1">{sec.title}</span>
+          <span class="text-xs text-ink-faint leading-snug" style="font-family: 'Inter', sans-serif;">{sec.description}</span>
         </button>
       ))}
     </div>
 
-    <!-- Swiper de páginas — atualizado por JS ao clicar nas tabs -->
+    <!-- Swiper de páginas -->
     <div class="relative">
       <div class="swiper book-pages-swiper">
         <div class="swiper-wrapper" id="book-pages-wrapper">
-          {/* Carrega Fundamentos por padrão */}
           {sections[0].pages.map((page, i) => (
-            <div class="swiper-slide" style="width: 240px;">
+            <div class="swiper-slide" style="width: 220px;">
               <img
                 src={`/imgs/paginas-internas/${page}`}
                 alt={`Página de Fundamentos ${i + 1}`}
-                width="240" height="330"
+                width="220" height="300"
                 loading="lazy"
-                class="gallery-img w-full h-auto rounded-2xl cursor-zoom-in border border-gray-100"
+                class="gallery-img w-full h-auto rounded-2xl cursor-zoom-in border border-surface-cream card-hover"
                 data-section="fund"
               />
             </div>
@@ -75,7 +75,6 @@ const sections = [
 </section>
 
 <script is:inline>
-  // Dados das seções para o JS
   const bookData = {
     fund: {
       color: '#E8572A',
@@ -99,7 +98,7 @@ const sections = [
 
     const swiper = new Swiper('.book-pages-swiper', {
       slidesPerView: 'auto',
-      spaceBetween: 16,
+      spaceBetween: 14,
       centeredSlides: false,
       loop: false,
       grabCursor: true,
@@ -108,36 +107,33 @@ const sections = [
       pagination: { el: '.book-pages-swiper .swiper-pagination', clickable: true },
     });
 
-    // Tabs
     document.querySelectorAll('.book-tab').forEach(btn => {
       btn.addEventListener('click', () => {
         const sec = btn.dataset.section;
         const data = bookData[sec];
 
-        // Atualiza estilos das tabs
         document.querySelectorAll('.book-tab').forEach(b => {
           b.style.borderColor = '';
           b.classList.remove('shadow-md');
-          b.classList.add('border-gray-200');
-          b.classList.remove('border-accent');
+          b.classList.add('border-surface-cream');
+          b.setAttribute('aria-pressed', 'false');
         });
         btn.style.borderColor = data.color;
-        btn.classList.remove('border-gray-200');
+        btn.classList.remove('border-surface-cream');
         btn.classList.add('shadow-md');
+        btn.setAttribute('aria-pressed', 'true');
 
-        // Atualiza slides
         swiper.removeAllSlides();
         const slides = data.pages.map((page, i) => `
-          <div class="swiper-slide" style="width:240px">
+          <div class="swiper-slide" style="width:220px">
             <img src="/imgs/paginas-internas/${page}"
                  alt="Página de ${data.alts[i]} ${i + 1}"
-                 width="240" height="330" loading="lazy"
-                 class="gallery-img w-full h-auto rounded-2xl cursor-zoom-in border border-gray-100" />
+                 width="220" height="300" loading="lazy"
+                 class="gallery-img w-full h-auto rounded-2xl cursor-zoom-in border border-surface-cream" />
           </div>`);
         swiper.appendSlide(slides);
         swiper.slideTo(0, 0);
 
-        // Reatribui lightbox aos novos elementos
         document.querySelectorAll('.gallery-img').forEach(img => {
           img.onclick = () => {
             const lb = document.getElementById('lightbox');
