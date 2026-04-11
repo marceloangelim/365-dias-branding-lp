@@ -1,70 +1,36 @@
 ---
-const row1 = [
-  "Depoimento_365_Foto1000-768x1149.webp",
-  "Depoimento_365_Foto1001.webp",
-  "Depoimento_365_Foto1002.webp",
-  "Depoimento_365_Foto1003.webp",
-  "Depoimento_365_Foto1004.webp",
-  "Depoimento_365_Foto1008.webp",
-  "Depoimento_365_Foto1010-768x954.webp",
-  "Depoimento_365_Foto1013-768x1118.webp",
-  "Depoimento_365_Foto1014-768x1058.webp",
-  "cliente_stories_1.webp",
-];
-const row2 = [
-  "Depoimento_365_Foto1014b-768x1058.webp",
-  "Depoimento_365_Foto1015-768x944.webp",
-  "Depoimento_365_Foto1017-768x1290.webp",
-  "Depoimento_365_Foto1018-768x1072.webp",
-  "Depoimento_365_Foto1019-768x1247.webp",
-  "Depoimento_365_Foto1020-768x1201.webp",
-  "cliente_stories_2.webp",
-  "cliente_stories_3.webp",
-  "cliente_stories_4.webp",
-];
+const row1 = ["Depoimento_365_Foto1000-768x1149.webp","Depoimento_365_Foto1001.webp","Depoimento_365_Foto1002.webp","Depoimento_365_Foto1003.webp","Depoimento_365_Foto1004.webp","Depoimento_365_Foto1008.webp","Depoimento_365_Foto1010-768x954.webp","Depoimento_365_Foto1013-768x1118.webp","Depoimento_365_Foto1014-768x1058.webp","cliente_stories_1.webp"];
+const row2 = ["Depoimento_365_Foto1014b-768x1058.webp","Depoimento_365_Foto1015-768x944.webp","Depoimento_365_Foto1017-768x1290.webp","Depoimento_365_Foto1018-768x1072.webp","Depoimento_365_Foto1019-768x1247.webp","Depoimento_365_Foto1020-768x1201.webp","cliente_stories_2.webp","cliente_stories_3.webp","cliente_stories_4.webp"];
 ---
-<section class="bg-white py-24 overflow-hidden" aria-label="Fotos de clientes com o livro">
+<section class="bg-white py-20 overflow-hidden" aria-label="Fotos de clientes com o livro">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center mb-12">
-    <div class="chapter-badge justify-center mb-4">Prova social real</div>
-    <h2 class="font-heading text-3xl sm:text-4xl font-bold text-ink gsap-reveal">
-      Elas compraram e adoraram
-    </h2>
-    <!-- Star aggregate -->
-    <div class="flex items-center justify-center gap-2 mt-4">
-      <span class="stars text-xl">★★★★★</span>
+    <div class="pill mb-4 mx-auto w-fit">Prova social real</div>
+    <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-ink gsap-reveal">Elas compraram e adoraram</h2>
+    <div class="flex items-center justify-center gap-2 mt-3">
+      <span class="stars text-lg">★★★★★</span>
       <span class="text-sm text-ink-faint">+50.000 clientes satisfeitas</span>
     </div>
   </div>
 
-  <!-- Marquee linha 1 -->
   <div class="marquee-wrapper mb-3">
     <div class="marquee-track left">
       {[...row1, ...row1].map((photo) => (
-        <div class="flex-shrink-0 w-40 sm:w-48 rounded-xl overflow-hidden">
-          <img
-            src={`/imgs/clientes/${photo}`}
-            alt="Cliente com o livro 365 Dias de Branding"
-            width="200" height="280"
-            loading="lazy"
-            class="gallery-img w-full h-52 sm:h-64 object-cover cursor-zoom-in hover:scale-105 transition-transform duration-500"
-          />
+        <div class="flex-shrink-0 w-36 sm:w-44 rounded-xl overflow-hidden">
+          <img src={`/imgs/clientes/${photo}`} alt="Cliente com o livro 365 Dias de Branding"
+            width="180" height="250" loading="lazy"
+            class="gallery-img w-full h-48 sm:h-60 object-cover cursor-zoom-in hover:scale-105 transition-transform duration-500" />
         </div>
       ))}
     </div>
   </div>
 
-  <!-- Marquee linha 2 -->
   <div class="marquee-wrapper">
     <div class="marquee-track right">
       {[...row2, ...row2].map((photo) => (
-        <div class="flex-shrink-0 w-40 sm:w-48 rounded-xl overflow-hidden">
-          <img
-            src={`/imgs/clientes/${photo}`}
-            alt="Cliente com o livro 365 Dias de Branding"
-            width="200" height="280"
-            loading="lazy"
-            class="gallery-img w-full h-52 sm:h-64 object-cover cursor-zoom-in hover:scale-105 transition-transform duration-500"
-          />
+        <div class="flex-shrink-0 w-36 sm:w-44 rounded-xl overflow-hidden">
+          <img src={`/imgs/clientes/${photo}`} alt="Cliente com o livro 365 Dias de Branding"
+            width="180" height="250" loading="lazy"
+            class="gallery-img w-full h-48 sm:h-60 object-cover cursor-zoom-in hover:scale-105 transition-transform duration-500" />
         </div>
       ))}
     </div>

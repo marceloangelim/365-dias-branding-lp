@@ -17,7 +17,7 @@ const {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#FAF7F4" />
+  <meta name="theme-color" content="#ffffff" />
 
   <!-- SEO Primário -->
   <title>{title}</title>
@@ -45,11 +45,11 @@ const {
   <!-- Favicon -->
   <link rel="icon" href="/imgs/logo-branding-lab.svg" type="image/svg+xml" />
 
-  <!-- Google Fonts v2: Playfair Display (headings) + Inter (body) -->
+  <!-- Google Fonts v3: Plus Jakarta Sans (headings) + Inter (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
     rel="stylesheet"
   />
 
@@ -189,7 +189,7 @@ const {
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
 </head>
-<body class="bg-surface-warm text-ink font-body antialiased">
+<body class="bg-white text-ink font-body antialiased overflow-x-hidden">
   <!-- Barra de leitura -->
   <div id="reading-progress"></div>
 
@@ -294,16 +294,12 @@ const {
         });
       });
 
-      // Book open cards
-      document.querySelectorAll('.book-card').forEach((card, i) => {
-        gsap.fromTo(card,
-          { rotateY: -25, y: 20, opacity: 0 },
-          {
-            rotateY: 0, y: 0, opacity: 1,
-            duration: 0.8, delay: i * 0.15, ease: 'power2.out',
-            scrollTrigger: { trigger: card, start: 'top 85%' }
-          }
-        );
+      // Underline accent animation
+      document.querySelectorAll('.gsap-underline').forEach(el => {
+        ScrollTrigger.create({
+          trigger: el, start: 'top 85%', once: true,
+          onEnter: () => el.classList.add('gsap-underline-done'),
+        });
       });
 
       // Parallax hero book

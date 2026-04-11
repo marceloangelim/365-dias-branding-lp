@@ -5,33 +5,28 @@ const pages = [
   "365sb-exec-01.avif","365sb-exec-02.avif","365sb-exec-03.avif","365sb-exec-04.avif","365sb-exec-05.avif",
 ];
 ---
-<section class="bg-white py-24 overflow-hidden" aria-label="Páginas do livro 365 Dias de Branding">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6">
-    <div class="text-center mb-12">
-      <div class="chapter-badge justify-center mb-4">Conteúdo real</div>
-      <h2 class="font-heading text-3xl sm:text-4xl font-bold text-ink gsap-reveal">
-        Veja por dentro
-      </h2>
-      <p class="text-ink-faint mt-3 text-sm">Clique em qualquer página para ampliar.</p>
-    </div>
+<section class="bg-white py-20 overflow-hidden" aria-label="Páginas do livro 365 Dias de Branding">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center mb-10">
+    <div class="pill mb-4 mx-auto w-fit">Conteúdo real</div>
+    <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-ink gsap-reveal">Veja por dentro</h2>
+    <p class="text-ink-faint mt-2 text-sm">Clique em qualquer página para ampliar</p>
   </div>
 
-  <!-- Swiper 3D Coverflow full-bleed -->
-  <div class="swiper gallery-swiper px-4">
+  <div class="swiper gallery-swiper">
     <div class="swiper-wrapper py-6">
       {pages.map((page, i) => (
-        <div class="swiper-slide rounded-2xl overflow-hidden" style="width:210px">
+        <div class="swiper-slide page-flip-wrap rounded-xl overflow-hidden" style="width:195px">
           <img
             src={`/imgs/paginas-internas/${page}`}
-            alt={`Página interna do livro 365 Dias de Branding — ${i + 1}`}
-            width="210" height="290"
+            alt={`Página interna ${i + 1} — 365 Dias de Branding`}
+            width="195" height="268"
             loading="lazy"
             class="gallery-img w-full h-auto cursor-zoom-in"
           />
         </div>
       ))}
     </div>
-    <div class="swiper-pagination mt-4"></div>
+    <div class="swiper-pagination mt-3"></div>
   </div>
 </section>
 
@@ -39,20 +34,11 @@ const pages = [
   function initGallerySwiper() {
     if (typeof Swiper === 'undefined') { setTimeout(initGallerySwiper, 200); return; }
     new Swiper('.gallery-swiper', {
-      effect: 'coverflow',
-      grabCursor: true,
-      centeredSlides: true,
-      slidesPerView: 'auto',
-      loop: true,
-      autoplay: { delay: 2800, disableOnInteraction: false, pauseOnMouseEnter: true },
-      speed: 700,
-      coverflowEffect: {
-        rotate: 22,
-        stretch: 8,
-        depth: 110,
-        modifier: 1,
-        slideShadows: false,
-      },
+      effect: 'coverflow', grabCursor: true, centeredSlides: true,
+      slidesPerView: 'auto', loop: true,
+      autoplay: { delay: 2600, disableOnInteraction: false, pauseOnMouseEnter: true },
+      speed: 650,
+      coverflowEffect: { rotate: 20, stretch: 5, depth: 100, modifier: 1, slideShadows: false },
       pagination: { el: '.gallery-swiper .swiper-pagination', clickable: true },
     });
   }

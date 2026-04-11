@@ -1,36 +1,26 @@
 ---
 ---
-<header id="nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-    <a href="/" aria-label="Branding Lab — Página inicial">
-      <img src="/imgs/logo-branding-lab.svg" alt="Branding Lab" width="140" height="40" class="h-8 w-auto" />
+<header id="nav" class="fixed top-4 left-0 right-0 z-50 px-4">
+  <div class="max-w-6xl mx-auto bg-white/90 backdrop-blur-md rounded-2xl px-5 h-14 flex items-center justify-between shadow-sm border border-gray-100 transition-all duration-300" id="nav-inner">
+    <a href="/" aria-label="Branding Lab">
+      <img src="/imgs/logo-branding-lab.svg" alt="Branding Lab" width="120" height="36" class="h-7 w-auto" />
     </a>
-    <a
-      href="#pricing"
-      class="btn-shimmer bg-accent text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-accent-dark transition-colors duration-300 shadow-sm cursor-pointer"
-    >
+    <a href="#pricing" class="btn-primary !py-2 !px-5 !text-sm cursor-pointer">
       Quero o 365DB
     </a>
   </div>
 </header>
-<div class="h-16"></div>
+<div class="h-20"></div>
 
 <script>
-  const nav = document.getElementById('nav');
-  let ticking = false;
+  const navInner = document.getElementById('nav-inner');
   window.addEventListener('scroll', () => {
-    if (!ticking) {
-      requestAnimationFrame(() => {
-        if (nav) {
-          if (window.scrollY > 20) {
-            nav.classList.add('bg-surface-warm/95', 'backdrop-blur-sm', 'border-b', 'border-surface-cream', 'shadow-sm');
-          } else {
-            nav.classList.remove('bg-surface-warm/95', 'backdrop-blur-sm', 'border-b', 'border-surface-cream', 'shadow-sm');
-          }
-        }
-        ticking = false;
-      });
-      ticking = true;
+    if (navInner) {
+      if (window.scrollY > 40) {
+        navInner.classList.add('shadow-md');
+      } else {
+        navInner.classList.remove('shadow-md');
+      }
     }
-  });
+  }, { passive: true });
 </script>

@@ -1,42 +1,43 @@
 ---
 ---
-<section class="bg-ink py-28 relative overflow-hidden" aria-label="Chamada final">
-  <!-- Decorative circles -->
-  <div class="absolute top-0 right-0 w-96 h-96 bg-accent/8 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
-  <div class="absolute bottom-0 left-0 w-80 h-80 bg-accent/6 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2 pointer-events-none"></div>
+<section class="bg-accent py-28 relative overflow-hidden" aria-label="Chamada final">
+  <!-- Book pages decorative lines -->
+  <div class="absolute inset-0 pointer-events-none opacity-10">
+    {Array.from({length: 12}).map((_, i) => (
+      <div class="absolute left-0 right-0 h-px bg-white" style={`top: ${8 + i * 7.5}%;`}></div>
+    ))}
+  </div>
 
-  <div class="relative max-w-3xl mx-auto px-4 sm:px-6 text-center">
+  <!-- Spiral rings decorative (top-right) -->
+  <div class="absolute -top-20 -right-20 w-72 h-72 border-4 border-white/10 rounded-full pointer-events-none"></div>
+  <div class="absolute -top-10 -right-10 w-40 h-40 border-2 border-white/15 rounded-full pointer-events-none"></div>
+
+  <div class="relative max-w-4xl mx-auto px-4 sm:px-6 text-center">
     <div class="gsap-reveal">
-      <img
-        src="/imgs/365-branding-digital-pages.avif"
-        alt="Páginas do livro 365 Dias de Branding"
-        width="340" height="240"
-        loading="lazy"
-        class="mx-auto mb-10 rounded-2xl max-w-xs"
-      />
+      <p class="text-white/70 text-sm font-semibold uppercase tracking-widest mb-5">Comece hoje</p>
 
-      <!-- Stars -->
-      <div class="flex items-center justify-center gap-2 mb-6">
-        <span class="stars text-2xl">★★★★★</span>
-      </div>
-
-      <h2 class="font-heading text-3xl sm:text-5xl font-bold text-white mb-5 leading-tight">
-        1 exercício para cada dia do ano<br class="hidden sm:block" /> na sua marca.
+      <h2 class="font-heading font-extrabold text-4xl sm:text-6xl text-white leading-[1.05] mb-6">
+        1 exercício para<br />cada dia do ano<br />na sua marca.
       </h2>
-      <p class="text-lg mb-10 text-white/70 max-w-lg mx-auto leading-relaxed">
-        Comece hoje a construir a marca que você sempre sonhou. O 365 Dias de Branding é o seu melhor amigo de execução.
+
+      <p class="text-white/80 text-lg leading-relaxed mb-10 max-w-xl mx-auto">
+        O 365 Dias de Branding é seu companheiro de execução — prático, real, e feito
+        para transformar a sua marca todos os dias do ano.
       </p>
 
-      <a
-        href="#pricing"
-        class="btn-shimmer inline-flex items-center gap-2.5 bg-accent text-white font-semibold text-lg px-10 py-5 rounded-full shadow-2xl shadow-accent/30 hover:bg-accent-dark transition-all duration-300 cursor-pointer"
-      >
+      <!-- Stars -->
+      <div class="flex items-center justify-center gap-2 mb-8">
+        <span class="stars text-xl text-white">★★★★★</span>
+        <span class="text-white/70 text-sm">+50.000 empreendedoras transformadas</span>
+      </div>
+
+      <a href="#pricing" class="btn-white">
         Sim, quero o Guia Prático 365DB!
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
 
-      <p class="text-sm mt-6 text-white/50">
-        Versão digital a partir de <strong class="text-white/80">3x R$87,31</strong> · Acesso imediato
+      <p class="text-white/60 text-sm mt-5">
+        Digital a partir de <strong class="text-white/90">3x R$87,31</strong> · Acesso imediato
       </p>
     </div>
   </div>

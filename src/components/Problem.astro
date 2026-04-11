@@ -1,62 +1,131 @@
 ---
+const profiles = [
+  {
+    id: 'inicio',
+    title: 'Empreendedora em início',
+    desc: 'Está criando sua marca e não sabe por onde começar. Precisa de um caminho claro — dia a dia — para construir algo sólido do zero.',
+    img: '/imgs/empresarias-branding-lab.avif',
+  },
+  {
+    id: 'servicos',
+    title: 'Prestadora de serviços',
+    desc: 'Já tem uma marca mas está estagnada. Quer novas estratégias para alavancar seu posicionamento, aumentar sua autoridade e vender mais.',
+    img: '/imgs/empresarias-branding-lab.avif',
+  },
+  {
+    id: 'info',
+    title: 'Infoprodutora / Social Media',
+    desc: 'Profissional de marketing que precisa de novas ideias, referências e ações práticas para apresentar a clientes — todos os dias do ano.',
+    img: '/imgs/empresarias-branding-lab.avif',
+  },
+  {
+    id: 'mentora',
+    title: 'Consultora ou Mentora',
+    desc: 'Atende empreendedoras e precisa de novas ações e exercícios de branding para enriquecer suas consultorias e mentorias.',
+    img: '/imgs/empresarias-branding-lab.avif',
+  },
+];
 ---
 <section class="bg-surface-warm py-24" aria-label="Para quem é o 365 Dias de Branding">
   <div class="max-w-6xl mx-auto px-4 sm:px-6">
 
-    <div class="text-center mb-4">
-      <div class="chapter-badge justify-center mb-4">Para quem é</div>
-      <h2 class="font-heading text-3xl sm:text-4xl font-bold text-ink gsap-reveal">
-        Você já se sentiu perdida ao tentar<br class="hidden sm:block" /> criar a sua marca?
-      </h2>
-    </div>
-    <span class="ink-divider block mx-auto mb-14" style="max-width:80px"></span>
+    <div class="grid md:grid-cols-[1fr_1fr] gap-16 items-start">
 
-    <div class="gsap-stagger-group grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-16">
-      {[
-        {
-          icon: 'M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253',
-          title: 'Empreendedora em início',
-          desc: 'Está criando uma marca e não sabe por onde começar. Precisa de direção e um caminho claro.'
-        },
-        {
-          icon: 'M13 10V3L4 14h7v7l9-11h-7z',
-          title: 'Prestadora de serviços',
-          desc: 'Já tem uma marca mas está desmotivada e precisa de novas estratégias para alavancar posicionamento.'
-        },
-        {
-          icon: 'M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z',
-          title: 'Infoprodutora',
-          desc: 'Profissional de marketing que quer mais ideias para apresentar a clientes e marcas.'
-        },
-        {
-          icon: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z',
-          title: 'Consultora / Mentora',
-          desc: 'Presta consultoria de branding e precisa de novas ideias e ações para sugerir a clientes.'
-        },
-      ].map((card) => (
-        <div class="gsap-stagger-item bg-white rounded-2xl p-6 border border-surface-cream card-hover cursor-default">
-          <div class="w-10 h-10 rounded-xl bg-accent-light flex items-center justify-center mb-4 flex-shrink-0">
-            <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d={card.icon}/>
-            </svg>
-          </div>
-          <h3 class="font-heading font-bold text-ink mb-2 text-lg">{card.title}</h3>
-          <p class="text-sm text-ink-faint leading-relaxed">{card.desc}</p>
+      <!-- LEFT: heading + accordion -->
+      <div>
+        <div class="pill mb-5">Este guia é para você que…</div>
+        <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-ink mb-3 leading-tight gsap-reveal">
+          Você já se sentiu<br />
+          <span class="underline-accent gsap-underline">perdida ao criar sua marca?</span>
+        </h2>
+        <p class="text-ink-faint mb-10 leading-relaxed">Se você se identificar com qualquer um desses perfis, o 365DB foi criado exatamente para você.</p>
+
+        <!-- Accordion -->
+        <div id="prob-list" class="space-y-0">
+          {profiles.map((p, i) => (
+            <div class={`prob-item ${i === 0 ? 'active' : ''}`} data-img={p.img} data-index={i}>
+              <button class="w-full flex items-center justify-between gap-4 py-5 pr-1 text-left cursor-pointer" aria-expanded={i === 0 ? 'true' : 'false'}>
+                <div class="flex items-center gap-4">
+                  <span class="flex-shrink-0 w-8 h-8 rounded-full bg-accent-light text-accent font-heading font-bold text-sm flex items-center justify-center">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <span class="font-heading font-bold text-ink text-base">{p.title}</span>
+                </div>
+                <span class="prob-icon flex-shrink-0 text-accent text-2xl font-light leading-none">+</span>
+              </button>
+              <div class="prob-body">
+                <p class="text-ink-faint text-sm leading-relaxed pb-5 pl-12">{p.desc}</p>
+              </div>
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
 
-    <!-- Ponte emocional — pull quote editorial -->
-    <div class="max-w-2xl mx-auto gsap-reveal">
-      <blockquote class="pull-quote">
-        <p class="font-heading text-xl sm:text-2xl text-ink leading-relaxed mb-4">
-          "Quando decidi empreender e criar a minha marca eu tinha muitas ideias, muita informação,
-          mas ao mesmo tempo sentia muita <strong class="not-italic font-bold">solidão</strong> e
-          falta de uma direção…"
-        </p>
-        <cite class="not-italic text-sm text-accent font-semibold">— Ellen, fundadora da Branding Lab</cite>
-      </blockquote>
-    </div>
+        <!-- Pull quote -->
+        <div class="mt-10 pl-5 border-l-4 border-accent gsap-reveal">
+          <p class="text-ink-muted italic leading-relaxed mb-2">
+            "Quando decidi empreender eu tinha muitas ideias, mas ao mesmo tempo sentia muita
+            <strong class="text-ink not-italic font-semibold">solidão</strong> e falta de uma direção…"
+          </p>
+          <cite class="not-italic text-xs text-accent font-bold uppercase tracking-widest">— Ellen, fundadora da Branding Lab</cite>
+        </div>
+      </div>
 
+      <!-- RIGHT: Photo (swaps with accordion) -->
+      <div class="hidden md:block sticky top-28 gsap-reveal-right">
+        <div class="relative rounded-3xl overflow-hidden">
+          <img
+            id="prob-photo"
+            src="/imgs/empresarias-branding-lab.avif"
+            alt="Empreendedoras da Branding Lab"
+            width="540" height="600"
+            loading="lazy"
+            class="w-full object-cover rounded-3xl shadow-xl transition-opacity duration-300"
+            style="aspect-ratio: 9/10;"
+          />
+          <!-- Floating credibility badge -->
+          <div class="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-sm rounded-2xl p-4 shadow-lg">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full overflow-hidden flex-shrink-0">
+                <img src="/imgs/depoimentos/ellen-365-v3.avif" alt="Ellen" width="40" height="40" loading="lazy" class="w-full h-full object-cover" />
+              </div>
+              <div>
+                <p class="font-heading font-bold text-ink text-sm">Ellen · Branding Lab</p>
+                <p class="text-xs text-ink-faint">8 anos de branding · 50k clientes</p>
+              </div>
+              <div class="ml-auto">
+                <div class="stars text-xs">★★★★★</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
+
+<script is:inline>
+  const items = document.querySelectorAll('.prob-item');
+  const photo = document.getElementById('prob-photo');
+
+  items.forEach(item => {
+    item.querySelector('button').addEventListener('click', () => {
+      // Close all
+      items.forEach(i => {
+        i.classList.remove('active');
+        i.querySelector('button').setAttribute('aria-expanded', 'false');
+      });
+      // Open clicked
+      item.classList.add('active');
+      item.querySelector('button').setAttribute('aria-expanded', 'true');
+      // Swap photo
+      if (photo && item.dataset.img) {
+        photo.style.opacity = '0';
+        setTimeout(() => {
+          photo.src = item.dataset.img;
+          photo.style.opacity = '1';
+        }, 200);
+      }
+    });
+  });
+</script>

@@ -4,51 +4,63 @@ const igDepos = [
   "Depoimento_365_DB_4.jpeg","Depoimento_365_DB_5.jpeg","Depoimento_365_DB_6.jpeg",
 ];
 ---
-<section class="bg-surface-warm py-24 overflow-hidden" aria-label="Depoimentos de clientes">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center mb-12">
-    <div class="chapter-badge justify-center mb-4">Resultados reais</div>
-    <h2 class="font-heading text-3xl sm:text-4xl font-bold text-ink gsap-reveal">
-      Olha os resultados de quem já está aplicando
-    </h2>
-    <p class="text-ink-faint mt-3 text-sm">Depoimentos direto do Instagram</p>
-  </div>
+<section class="bg-surface-warm py-24" aria-label="Depoimentos do Instagram">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
 
-  <!-- Swiper cards 3D -->
-  <div class="swiper depo-swiper max-w-5xl mx-auto px-4">
-    <div class="swiper-wrapper pb-10">
+    <div class="text-center mb-12">
+      <div class="pill mb-4 mx-auto w-fit">Resultados reais</div>
+      <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-ink gsap-reveal">
+        Olha os resultados de quem<br class="hidden sm:block" /> já está aplicando
+      </h2>
+      <p class="text-ink-faint mt-3 text-sm">Depoimentos reais direto do Instagram</p>
+    </div>
+
+    <!-- 3-column grid — first 3 always shown, last 3 in swiper on mobile -->
+    <div class="hidden sm:grid grid-cols-3 gap-5 gsap-stagger-group">
       {igDepos.map((dep, i) => (
-        <div class="swiper-slide rounded-2xl overflow-hidden" style="width: min(320px, 88vw);">
+        <div class="gsap-stagger-item card-lift rounded-2xl overflow-hidden shadow-sm border border-gray-100 cursor-pointer" onclick={`openLightbox('/imgs/depoimentos/${dep}', 'Depoimento ${i+1}')`}>
           <img
             src={`/imgs/depoimentos/${dep}`}
             alt={`Depoimento de cliente ${i + 1} — 365 Dias de Branding`}
-            width="320" height="480"
+            width="340" height="500"
             loading="lazy"
-            class="gallery-img w-full h-auto cursor-zoom-in"
+            class="w-full h-auto"
           />
         </div>
       ))}
     </div>
-    <div class="swiper-pagination"></div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
+
+    <!-- Mobile: swiper cards -->
+    <div class="sm:hidden swiper depo-swiper">
+      <div class="swiper-wrapper pb-10">
+        {igDepos.map((dep, i) => (
+          <div class="swiper-slide rounded-2xl overflow-hidden" style="width: min(300px, 85vw);">
+            <img src={`/imgs/depoimentos/${dep}`} alt={`Depoimento ${i+1}`} width="300" height="440" loading="lazy"
+              class="gallery-img w-full h-auto cursor-zoom-in" />
+          </div>
+        ))}
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
   </div>
 </section>
 
 <script is:inline>
+  function openLightbox(src, alt) {
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lb-img');
+    if (lb && lbImg) { lbImg.src = src; lbImg.alt = alt; lb.classList.add('show'); document.body.style.overflow = 'hidden'; }
+  }
+
   function initDepoSwiper() {
     if (typeof Swiper === 'undefined') { setTimeout(initDepoSwiper, 200); return; }
     new Swiper('.depo-swiper', {
-      effect: 'cards',
-      grabCursor: true,
-      loop: true,
+      effect: 'cards', grabCursor: true, loop: true,
       autoplay: { delay: 3500, disableOnInteraction: false, pauseOnMouseEnter: true },
       speed: 600,
-      cardsEffect: { perSlideOffset: 10, perSlideRotate: 3, rotate: true, slideShadows: false },
+      cardsEffect: { perSlideOffset: 8, perSlideRotate: 2, slideShadows: false },
       pagination: { el: '.depo-swiper .swiper-pagination', clickable: true },
-      navigation: {
-        nextEl: '.depo-swiper .swiper-button-next',
-        prevEl: '.depo-swiper .swiper-button-prev',
-      },
     });
   }
   window.addEventListener('load', initDepoSwiper);

@@ -1,24 +1,21 @@
 ---
 const sections = [
   {
-    id: "fund",
-    num: "01", title: "Fundamentos",
+    id: "fund", num: "01", title: "Fundamentos",
     color: "#E8572A",
-    description: "Mentalidade, direção e as principais preocupações na construção e gestão da sua marca.",
+    desc: "Mentalidade, direção e as principais preocupações na construção e gestão da sua marca.",
     pages: ["365sb-fund-01.avif","365sb-fund-02.avif","365sb-fund-03.avif","365sb-fund-04.avif","365sb-fund-05.avif"],
   },
   {
-    id: "plan",
-    num: "02", title: "Planejamento",
+    id: "plan", num: "02", title: "Planejamento",
     color: "#C44820",
-    description: "Planeje detalhes inteligentes e defina os próximos passos com clareza e estratégia.",
+    desc: "Planeje detalhes inteligentes e defina os próximos passos com clareza e estratégia.",
     pages: ["365sb-plan-01.avif","365sb-plan-02.avif","365sb-plan-03.avif","365sb-plan-04.avif","365sb-plan-05.avif"],
   },
   {
-    id: "exec",
-    num: "03", title: "Execução",
+    id: "exec", num: "03", title: "Execução",
     color: "#F4956A",
-    description: "O maior capítulo — atividades práticas para todos os 365 dias do ano.",
+    desc: "O maior capítulo — atividades práticas para todos os 365 dias do ano.",
     pages: ["365sb-exec-01.avif","365sb-exec-02.avif","365sb-exec-03.avif","365sb-exec-04.avif","365sb-exec-05.avif"],
   },
 ];
@@ -26,49 +23,49 @@ const sections = [
 <section class="bg-surface-warm py-24 overflow-hidden" aria-label="As 3 partes do livro">
   <div class="max-w-6xl mx-auto px-4 sm:px-6">
 
-    <div class="text-center mb-4">
-      <div class="chapter-badge justify-center mb-4">Como é por dentro</div>
+    <div class="text-center mb-16">
+      <div class="pill mb-5 mx-auto w-fit">Como é por dentro</div>
+      <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-ink gsap-reveal">
+        Material 100% prático em 3 partes
+      </h2>
     </div>
-    <h2 class="font-heading text-3xl sm:text-4xl font-bold text-ink text-center mb-3 gsap-reveal">
-      Material 100% prático em 3 partes
-    </h2>
-    <span class="ink-divider block mx-auto mb-12" style="max-width:80px"></span>
 
-    <!-- Tabs -->
-    <div class="flex flex-col sm:flex-row gap-4 mb-10 justify-center" id="book-tabs">
+    <!-- 3 section cards with large decorative numbers -->
+    <div class="grid md:grid-cols-3 gap-6 mb-12 gsap-stagger-group">
       {sections.map((sec, i) => (
         <button
           data-section={sec.id}
-          class={`book-tab flex-1 sm:max-w-[220px] text-left p-5 rounded-2xl border-2 transition-all duration-300 cursor-pointer ${i === 0 ? 'bg-white shadow-md' : 'border-surface-cream bg-white/60 hover:border-accent/40'}`}
+          class={`book-tab gsap-stagger-item text-left rounded-2xl p-7 border-2 transition-all duration-300 cursor-pointer relative overflow-hidden ${i === 0 ? 'bg-white shadow-lg' : 'bg-white border-gray-100 hover:border-accent/30 hover:shadow-md'}`}
           style={i === 0 ? `border-color: ${sec.color}` : ''}
           aria-pressed={i === 0 ? 'true' : 'false'}
         >
-          <span class="text-xs font-bold tracking-widest uppercase block mb-1" style={`color: ${sec.color}; font-family: 'Inter', sans-serif;`}>Parte {sec.num}</span>
-          <span class="font-heading font-bold text-lg text-ink block mb-1">{sec.title}</span>
-          <span class="text-xs text-ink-faint leading-snug" style="font-family: 'Inter', sans-serif;">{sec.description}</span>
+          <!-- Deco number -->
+          <span class="absolute -top-4 -right-3 font-heading font-extrabold text-8xl leading-none pointer-events-none select-none" style={`color: ${sec.color}15`}>{sec.num}</span>
+          <div class="relative">
+            <span class="font-heading font-bold text-xs uppercase tracking-widest block mb-3" style={`color: ${sec.color}`}>Parte {sec.num}</span>
+            <span class="font-heading font-bold text-xl text-ink block mb-2">{sec.title}</span>
+            <span class="text-xs text-ink-faint leading-relaxed block">{sec.desc}</span>
+          </div>
         </button>
       ))}
     </div>
 
-    <!-- Swiper de páginas -->
-    <div class="relative">
-      <div class="swiper book-pages-swiper">
-        <div class="swiper-wrapper" id="book-pages-wrapper">
-          {sections[0].pages.map((page, i) => (
-            <div class="swiper-slide" style="width: 220px;">
-              <img
-                src={`/imgs/paginas-internas/${page}`}
-                alt={`Página de Fundamentos ${i + 1}`}
-                width="220" height="300"
-                loading="lazy"
-                class="gallery-img w-full h-auto rounded-2xl cursor-zoom-in border border-surface-cream card-hover"
-                data-section="fund"
-              />
-            </div>
-          ))}
-        </div>
-        <div class="swiper-pagination mt-6"></div>
+    <!-- Swiper -->
+    <div class="swiper book-pages-swiper">
+      <div class="swiper-wrapper py-4">
+        {sections[0].pages.map((page, i) => (
+          <div class="swiper-slide page-flip-wrap" style="width: 200px;">
+            <img
+              src={`/imgs/paginas-internas/${page}`}
+              alt={`Página de Fundamentos ${i + 1}`}
+              width="200" height="275"
+              loading="lazy"
+              class="gallery-img w-full h-auto rounded-xl cursor-zoom-in border border-gray-100"
+            />
+          </div>
+        ))}
       </div>
+      <div class="swiper-pagination mt-4"></div>
     </div>
 
   </div>
@@ -76,34 +73,17 @@ const sections = [
 
 <script is:inline>
   const bookData = {
-    fund: {
-      color: '#E8572A',
-      pages: ['365sb-fund-01.avif','365sb-fund-02.avif','365sb-fund-03.avif','365sb-fund-04.avif','365sb-fund-05.avif'],
-      alts: ['Fundamentos','Fundamentos','Fundamentos','Fundamentos','Fundamentos'],
-    },
-    plan: {
-      color: '#C44820',
-      pages: ['365sb-plan-01.avif','365sb-plan-02.avif','365sb-plan-03.avif','365sb-plan-04.avif','365sb-plan-05.avif'],
-      alts: ['Planejamento','Planejamento','Planejamento','Planejamento','Planejamento'],
-    },
-    exec: {
-      color: '#F4956A',
-      pages: ['365sb-exec-01.avif','365sb-exec-02.avif','365sb-exec-03.avif','365sb-exec-04.avif','365sb-exec-05.avif'],
-      alts: ['Execução','Execução','Execução','Execução','Execução'],
-    },
+    fund: { color: '#E8572A', pages: ['365sb-fund-01.avif','365sb-fund-02.avif','365sb-fund-03.avif','365sb-fund-04.avif','365sb-fund-05.avif'], label: 'Fundamentos' },
+    plan: { color: '#C44820', pages: ['365sb-plan-01.avif','365sb-plan-02.avif','365sb-plan-03.avif','365sb-plan-04.avif','365sb-plan-05.avif'], label: 'Planejamento' },
+    exec: { color: '#F4956A', pages: ['365sb-exec-01.avif','365sb-exec-02.avif','365sb-exec-03.avif','365sb-exec-04.avif','365sb-exec-05.avif'], label: 'Execução' },
   };
 
   function initBookSwiper() {
     if (typeof Swiper === 'undefined') { setTimeout(initBookSwiper, 200); return; }
-
     const swiper = new Swiper('.book-pages-swiper', {
-      slidesPerView: 'auto',
-      spaceBetween: 14,
-      centeredSlides: false,
-      loop: false,
-      grabCursor: true,
-      autoplay: { delay: 3000, disableOnInteraction: true },
-      speed: 500,
+      slidesPerView: 'auto', spaceBetween: 14,
+      grabCursor: true, loop: false,
+      autoplay: { delay: 3000, disableOnInteraction: true }, speed: 500,
       pagination: { el: '.book-pages-swiper .swiper-pagination', clickable: true },
     });
 
@@ -111,44 +91,34 @@ const sections = [
       btn.addEventListener('click', () => {
         const sec = btn.dataset.section;
         const data = bookData[sec];
-
         document.querySelectorAll('.book-tab').forEach(b => {
           b.style.borderColor = '';
-          b.classList.remove('shadow-md');
-          b.classList.add('border-surface-cream');
+          b.classList.remove('shadow-lg', 'bg-white');
+          b.classList.add('border-gray-100', 'bg-white');
           b.setAttribute('aria-pressed', 'false');
         });
         btn.style.borderColor = data.color;
-        btn.classList.remove('border-surface-cream');
-        btn.classList.add('shadow-md');
+        btn.classList.add('shadow-lg');
         btn.setAttribute('aria-pressed', 'true');
 
         swiper.removeAllSlides();
-        const slides = data.pages.map((page, i) => `
-          <div class="swiper-slide" style="width:220px">
-            <img src="/imgs/paginas-internas/${page}"
-                 alt="Página de ${data.alts[i]} ${i + 1}"
-                 width="220" height="300" loading="lazy"
-                 class="gallery-img w-full h-auto rounded-2xl cursor-zoom-in border border-surface-cream" />
-          </div>`);
-        swiper.appendSlide(slides);
+        swiper.appendSlide(data.pages.map((page, i) => `
+          <div class="swiper-slide page-flip-wrap" style="width:200px">
+            <img src="/imgs/paginas-internas/${page}" alt="Página de ${data.label} ${i+1}"
+                 width="200" height="275" loading="lazy"
+                 class="gallery-img w-full h-auto rounded-xl cursor-zoom-in border border-gray-100" />
+          </div>`));
         swiper.slideTo(0, 0);
 
         document.querySelectorAll('.gallery-img').forEach(img => {
           img.onclick = () => {
             const lb = document.getElementById('lightbox');
             const lbImg = document.getElementById('lb-img');
-            if (lb && lbImg) {
-              lbImg.src = img.src;
-              lbImg.alt = img.alt;
-              lb.classList.add('show');
-              document.body.style.overflow = 'hidden';
-            }
+            if (lb && lbImg) { lbImg.src = img.src; lbImg.alt = img.alt; lb.classList.add('show'); document.body.style.overflow = 'hidden'; }
           };
         });
       });
     });
   }
-
   window.addEventListener('load', initBookSwiper);
 </script>
