@@ -1,2 +1,9 @@
+# Rewrite assets do base path para o root real
+/365-dias-branding-lp/_astro/*    /_astro/:splat    200
+
+# Serve a LP no subpath (com e sem trailing slash)
+/365-dias-branding-lp             /index.html       200
+/365-dias-branding-lp/            /index.html       200
+
 # Redirect raiz do subdomínio para o site principal
-/    https://brandinglab.com.br    301
+/                                 https://brandinglab.com.br    301
