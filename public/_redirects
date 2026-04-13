@@ -1,3 +1,2 @@
-# Serve a LP em /365-dias-branding-lp (rewrite silencioso do root)
-/365-dias-branding-lp    /index.html    200
-/365-dias-branding-lp/*  /:splat        200
+# Redirect raiz do subdomínio para o site principal
+/    https://brandinglab.com.br    301
