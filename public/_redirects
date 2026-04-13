@@ -4,6 +4,3 @@
 # Serve a LP no subpath (com e sem trailing slash)
 /365-dias-branding-lp             /index.html       200
 /365-dias-branding-lp/            /index.html       200
-
-# Redirect raiz do subdomínio para o site principal
-/                                 https://brandinglab.com.br    301
