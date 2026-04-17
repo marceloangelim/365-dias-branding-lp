@@ -1,6 +1,3 @@
-# Rewrite assets do base path para o root real
-/365-dias-branding-lp/_astro/*    /_astro/:splat    200
-
-# Serve a LP no subpath (com e sem trailing slash)
-/365-dias-branding-lp             /index.html       200
-/365-dias-branding-lp/            /index.html       200
+# /365-dias-branding-lp alias (sem base path no build, rewrite simples)
+/365-dias-branding-lp    /index.html    200
+/365-dias-branding-lp/   /index.html    200
