@@ -9,3 +9,8 @@ node_modules/
 .claude/
 imgs lp/
 LP 365 Dias de branding.docx
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
