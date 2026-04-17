@@ -3,7 +3,6 @@
   "name": "365-dias-branding-lp",
   "compatibility_date": "2026-04-17",
   "assets": {
-    "directory": "./dist",
-    "binding": "ASSETS"
+    "directory": "./dist"
   }
 }
